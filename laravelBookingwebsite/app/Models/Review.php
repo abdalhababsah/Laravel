@@ -10,9 +10,11 @@ class Review extends Model
     use HasFactory;
     protected $fillable = [
         'ReviewID',
+        'Opinion',
+        'Rate',
         'UserID',
         'HouseID',
-        'Opinion',
+
         // Add other fields as needed...
     ];
 

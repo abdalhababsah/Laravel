@@ -11,9 +11,9 @@ class CreateBookingsTable extends Migration
             $table->bigIncrements('BookingID');
             $table->string('Address');
             $table->integer('Rent');
-            $table->string('Leave');
-            $table->string('BookingStatus');
-
+            $table->integer('BookingStatus');
+            $table->date('ArravingTime');
+            $table->date('LeavingTime');
             $table->foreignId('RenterID')->constrained('users', 'id')->onDelete('cascade');
             $table->timestamps();
 

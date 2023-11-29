@@ -11,22 +11,19 @@ class House extends Model
     protected $fillable = [
         'HouseID',
         'Address',
-        'AreaID',
-        'UserID',
-        'Contact',
+        'Type',
         'NumberOfRoom',
         'NumberOfToilet',
         'NumberOfBelcony',
         'Rent',
         'Image',
-        'BookingID',
         'Status',
+        'Location',
+        'BookingID',
+        'UserID',
         // Add other fields as needed...
     ];
-    public function area()
-    {
-        return $this->belongsTo(Area::class, 'AreaID');
-    }
+
 
     public function user()
     {

@@ -18,11 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'RoleID',
+
         'name',
         'Contact',
         'email',
         'password',
+        'RoleID',
     ];
 
     /**
@@ -50,10 +51,7 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class, 'RoleID');
     }
 
-    public function areas()
-    {
-        return $this->hasMany(Area::class, 'UserID');
-    }
+
 
     public function bookings()
     {

@@ -10,14 +10,14 @@ class CreateHousesTable extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->id('HouseID');
             $table->string('Address');
-            $table->string('Contact');
+            $table->string('Type');
             $table->integer('NumberOfRoom');
             $table->integer('NumberOfToilet');
             $table->integer('NumberOfBelcony');
             $table->integer('Rent');
             $table->string('Image')->nullable();
-            $table->string('Status');
-            $table->foreignId('AreaID')->constrained('areas', 'AreaID')->onDelete('cascade');
+            $table->enum('Status', ['available', 'booked']);
+            $table->string('Location');
             $table->foreignId('BookingID')->constrained('bookings', 'BookingID')->onDelete('cascade');
             $table->foreignId('UserID')->constrained('users', 'id')->onDelete('cascade');
             $table->timestamps();

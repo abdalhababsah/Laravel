@@ -13,9 +13,10 @@ class Booking extends Model
         'BookingID',
         'Address',
         'Rent',
-        'Leave',
-        'RenterID',
         'BookingStatus',
+        'ArravingTime',
+        'LeavingTime',
+        'RenterID',
     ];
     public function renter()
     {
