@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,19 +20,16 @@ Route::get('/', function () {
 
 
 
+
+
+
 Route::get('/homepage', function () {
     return view('Home');
 });
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/facilities', function () {
-    return view('facilities');
-});
-Route::get('/rooms', function () {
-    return view('rooms');
-});
-
+////////////////////////////////nav-bar/////////////////////////////////////
+Route::get('/home', [PageController::class, 'home'])->name('home');
+Route::get('/rooms', [PageController::class, 'rooms'])->name('rooms');
+Route::get('/facilities', [PageController::class, 'facilities'])->name('facilities');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/about', [PageController::class, 'about'])->name('about');
+//////////////////////////////////////////////////////////////////////////
