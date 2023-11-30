@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+
 class UserController extends Controller
 {
     public function index()
-{
-    $users = User::all();
-    return view('admin.users.index', ['users' => $users]);
-}
+    {
+
+        $users = User::all();
+        return view('admin.users.index', ['users' => $users]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -45,9 +47,9 @@ class UserController extends Controller
      * Display the specified resource.
      */
     public function show(User $user)
-{
-    return view('admin.users.show', ['user' => $user]);
-}
+    {
+        return view('admin.users.show', ['user' => $user]);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -61,25 +63,25 @@ class UserController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, User $user)
-{
-    $data = $request->validate([
-        'name' => 'required',
-        'email' => 'required',
-        'password' => 'required',
-        'RoleID' => 'required',
-    ]);
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'RoleID' => 'required',
+        ]);
 
-    $user->update($data);
-    return redirect(route('users.index'));
-}
+        $user->update($data);
+        return redirect(route('users.index'));
+    }
 
     /**
      * Remove the specified resource from storage.
      */
 
-     public function destroy(User $user)
-     {
-         $user->delete();
-         return redirect(route('users.index'));
-     }
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return redirect(route('users.index'));
+    }
 }

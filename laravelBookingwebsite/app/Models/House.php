@@ -27,11 +27,10 @@ class House extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'UserID');
     }
     public function bookings()
     {
         return $this->belongsTo(Booking::class, 'HouseID');
     }
-
 }
