@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User - Tailwind CSS</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
+@section('content')
 
-<body class="bg-gray-100">
-    <header>
-        <!-- Header content remains the same -->
-    </header>
+
 
     <div class="flex">
         <!-- Left Sidebar -->
@@ -64,12 +55,15 @@
     </div>
     <!-- // Page Wrapper -->
 
-    <!-- JQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Ckeditor -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
-    <!-- Custom Script -->
-    <script src="../../js/scripts.js"></script>
-</body>
 
-</html>
+
+
+        <!-- JQuery -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Ckeditor -->
+        <script
+            src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
+        <!-- Custom Script -->
+        <script src="../../js/scripts.js"></script>
+        @endsection
