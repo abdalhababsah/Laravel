@@ -9,12 +9,12 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->bigIncrements('BookingID');
-            $table->string('Address');
-            $table->integer('Rent');
             $table->integer('BookingStatus');
             $table->date('ArravingTime');
             $table->date('LeavingTime');
             $table->foreignId('RenterID')->constrained('users', 'id')->onDelete('cascade');
+            $table->foreignId('HouseID')->constrained('houses', 'HouseID')->onDelete('cascade');
+
             $table->timestamps();
 
 

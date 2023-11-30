@@ -14,16 +14,15 @@ class BookingsTableSeeder extends Seeder
     {
         DB::table('bookings')->insert([
             [
-                'Address' => '456 Park Avenue',
-                'Rent' => 1200,
                 'BookingStatus' => 1,
                 'ArravingTime' => '2023-12-01',
                 'LeavingTime' => '2023-12-15',
                 'RenterID' => 2, // Example RenterID
+                'HouseID' => 1, // Example HouseID
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-
+            // Add more bookings as needed
         ]);
     }
 

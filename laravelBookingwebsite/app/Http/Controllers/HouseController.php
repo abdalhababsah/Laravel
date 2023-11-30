@@ -75,6 +75,7 @@ class HouseController extends Controller
         return view('house.edit', ['house' => $house]);
     }
 
+
     /**
      * Update the specified resource in storage.
      */
@@ -116,16 +117,14 @@ class HouseController extends Controller
      */
     public function destroy(House $house)
     {
-        // Get the path to the image in the storage directory
         $imagePath = 'public/images/' . $house->Image;
 
-        // Check if the image exists in storage before attempting to delete
-        if (Storage::disk('local')->exists($imagePath)) {
-            // Delete the image from storage
-            Storage::disk('local')->delete($imagePath);
+        if (Storage::exists($imagePath)) {
+            Storage::delete($imagePath);
         }
 
         $house->delete();
-        return redirect(route('house.index'))->with('success', 'movie delete succesffully');
+        return redirect(route('house.index'))->with('success', 'House deleted successfully');
     }
+
 }

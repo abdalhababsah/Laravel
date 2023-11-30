@@ -31,7 +31,7 @@ Route::get('/house/create', [HouseController::class, 'create'])->name('house.cre
 Route::post('/house', [HouseController::class, 'store'])->name('house.store');
 Route::get('/house/{house}/edit', [HouseController::class, 'edit'])->name('house.edit');
 Route::put('/house/{house}/update', [HouseController::class, 'update'])->name('house.update');
-Route::delete('/house/{house}/destroy', [HouseController::class, 'destroy'])->name('house.destroy');
+Route::delete('/house/{house}', [HouseController::class, 'destroy'])->name('house.destroy');
 //////////////////////////////////////////////////////////////////////////
 
 
