@@ -11,12 +11,11 @@ class Booking extends Model
 
     protected $fillable = [
         'BookingID',
-        'Address',
-        'Rent',
         'BookingStatus',
         'ArravingTime',
         'LeavingTime',
         'RenterID',
+        'HouseID',
     ];
     public function renter()
     {

@@ -18,7 +18,6 @@ class CreateHousesTable extends Migration
             $table->string('Image')->nullable();
             $table->enum('Status', ['available', 'booked']);
             $table->string('Location');
-            $table->foreignId('BookingID')->constrained('bookings', 'BookingID')->onDelete('cascade');
             $table->foreignId('UserID')->constrained('users', 'id')->onDelete('cascade');
             $table->timestamps();
 

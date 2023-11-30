@@ -19,7 +19,6 @@ class House extends Model
         'Image',
         'Status',
         'Location',
-        'BookingID',
         'UserID',
         // Add other fields as needed...
     ];
@@ -28,10 +27,10 @@ class House extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'UserID');
     }
     public function bookings()
     {
-        return $this->hasMany(Booking::class, 'BookingID', 'HouseID');
+        return $this->belongsTo(Booking::class, 'HouseID');
     }
 }

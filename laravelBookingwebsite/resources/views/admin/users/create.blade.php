@@ -4,54 +4,51 @@
 
 
 
-    <div class="admin-wrapper">
+    <div class="flex">
         <!-- Left Sidebar -->
         <!-- Left sidebar content remains the same -->
 
         <!-- Admin Content -->
-        <div class="admin-content">
-            <div class="button-group">
-                <a href="{{ route('users.create') }}" class="btn btn-big">Add User</a>
-                <a href="{{ route('users.index') }}" class="btn btn-big">Manage Users</a>
+        <div class="w-full p-8">
+            <div class="flex justify-between mb-8">
+                <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md mr-4">Add User</a>
+                <a href="{{ route('users.index') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Manage Users</a>
             </div>
 
-            <div class="content">
-                <h2 class="page-title">Add User</h2>
+            <div class="bg-white rounded-md shadow-md p-8">
+                <h2 class="text-2xl font-bold mb-4">Add User</h2>
 
-                <form action="{{ route('users.store') }}" method="post">
+                <form action="{{ route('users.store') }}" method="post" class="space-y-4">
                     @csrf
                     @method('post')
                     <div>
-                        <label>Username</label>
-                        <input type="text" name="name" class="text-input">
+                        <label class="block mb-1">Username</label>
+                        <input type="text" name="name" class="border-gray-300 rounded-md w-full py-2 px-3" placeholder="Username">
                     </div>
                     <div>
-                        <label>Email</label>
-                        <input type="email" name="email" class="text-input">
+                        <label class="block mb-1">Email</label>
+                        <input type="email" name="email" class="border-gray-300 rounded-md w-full py-2 px-3" placeholder="Email">
                     </div>
                     <div>
-                        <label>Password</label>
-                        <input type="password" name="password" class="text-input">
+                        <label class="block mb-1">Password</label>
+                        <input type="password" name="password" class="border-gray-300 rounded-md w-full py-2 px-3" placeholder="Password">
                     </div>
                     <div>
-                        <label>Contact</label>
-                        <input type="text" name="Contact" class="text-input">
+                        <label class="block mb-1">Contact</label>
+                        <input type="text" name="Contact" class="border-gray-300 rounded-md w-full py-2 px-3" placeholder="Contact">
                     </div>
-
                     <div>
-                        <label>Role</label>
-                        <select name="RoleID" class="text-input">
-                            <option value="1" >User</option>
-                            <option value="2" >Leaser</option>
-                            <option value="3" >Admin</option>
+                        <label class="block mb-1">Role</label>
+                        <select name="RoleID" class="border-gray-300 rounded-md w-full py-2 px-3">
+                            <option value="1">User</option>
+                            <option value="2">Leaser</option>
+                            <option value="3">Admin</option>
                         </select>
                     </div>
-
                     <div>
-                        <button type="submit" class="btn btn-big">Add User</button>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Add User</button>
                     </div>
                 </form>
-
             </div>
         </div>
         <!-- // Admin Content -->

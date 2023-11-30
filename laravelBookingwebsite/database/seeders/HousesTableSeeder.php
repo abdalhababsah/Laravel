@@ -23,7 +23,6 @@ class HousesTableSeeder extends Seeder
                 'Image' => 'house1.jpg',
                 'Status' => 'available',
                 'Location' => 'City Center',
-                'BookingID' => 1, // Example BookingID
                 'UserID' => 1, // Example UserID
                 'created_at' => now(),
                 'updated_at' => now(),

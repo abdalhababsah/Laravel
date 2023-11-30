@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\House;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Faker\Core\File as FakerFile;
 use Illuminate\Support\Facades\File;
@@ -15,8 +16,8 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $houses = House::all();
-        return view('house.index', ['houses' => $houses]);
+        $houses = House::with('User')->get();
+        return view('leaser.house.index', ['houses' => $houses]);
     }
 
     /**
@@ -24,7 +25,7 @@ class HouseController extends Controller
      */
     public function create()
     {
-        return view('house.create');
+        return view('leaser.house.create');
     }
 
     /**
@@ -32,6 +33,7 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->validate([
             'Address' => 'required',
             'Type' => 'required',
@@ -42,15 +44,13 @@ class HouseController extends Controller
             'Image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'Status' => 'required',
             'Location' => 'required',
-            'BookingID' => 'required',
-            'UserID' => 'required'
+            'UserID' => 'required',
         ]);
 
         if ($request->hasFile('Image')) {
             $image = $request->file('Image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/images', $imageName); // Store the image in the public/images directory
-
+            $image->storeAs('public/images/rooms', $imageName);
             // Add the image name to the data array
             $data['Image'] = $imageName;
         }
@@ -72,8 +72,9 @@ class HouseController extends Controller
      */
     public function edit(House $house)
     {
-        return view('house.edit', ['house' => $house]);
+        return view('leaser.house.edit', ['house' => $house]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -90,20 +91,19 @@ class HouseController extends Controller
             'Image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'Status' => 'required',
             'Location' => 'required',
-            'BookingID' => 'required',
-            'UserID' => 'required'
+            'UserID' => 'required',
         ]);
 
         if ($request->hasFile('Image')) {
             // Delete the existing image file
-            $destination_path = 'public/images/' . $house->Image;
+            $destination_path = 'public/images/rooms' . $house->Image;
             if (File::exists($destination_path)) {
                 File::delete($destination_path);
             }
             // Upload the new image file
             $image = $request->file('Image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/images', $imageName);
+            $image->storeAs('public/images/rooms', $imageName);
             // Update the data array with the new image name
             $data['Image'] = $imageName;
         }
@@ -116,16 +116,13 @@ class HouseController extends Controller
      */
     public function destroy(House $house)
     {
-        // Get the path to the image in the storage directory
-        $imagePath = 'public/images/' . $house->Image;
+        $imagePath = 'public/images/rooms' . $house->Image;
 
-        // Check if the image exists in storage before attempting to delete
-        if (Storage::disk('local')->exists($imagePath)) {
-            // Delete the image from storage
-            Storage::disk('local')->delete($imagePath);
+        if (Storage::exists($imagePath)) {
+            Storage::delete($imagePath);
         }
 
         $house->delete();
-        return redirect(route('house.index'))->with('success', 'movie delete succesffully');
+        return redirect(route('house.index'))->with('success', 'House deleted successfully');
     }
 }
