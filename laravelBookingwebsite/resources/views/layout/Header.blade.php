@@ -21,7 +21,18 @@
 
     <title>Document</title>
     <style>
-
+.modal-backdrop {
+    --bs-backdrop-zindex: 0 !important;
+    --bs-backdrop-bg: #0000 !important;
+    --bs-backdrop-opacity: 0.5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--bs-backdrop-zindex);
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bs-backdrop-bg);
+}
 
 .box{
     border-top-color: var(--teal) !important;

@@ -3,7 +3,7 @@
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +33,13 @@ Route::get('/house/{house}/edit', [HouseController::class, 'edit'])->name('house
 Route::put('/house/{house}/update', [HouseController::class, 'update'])->name('house.update');
 Route::delete('/house/{house}/destroy', [HouseController::class, 'destroy'])->name('house.destroy');
 //////////////////////////////////////////////////////////////////////////
+
+
+// admin Routes for the users
+Route::get('/admin/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/admin/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/admin/users', [UserController::class, 'store'])->name('users.store');
+Route::get('/admin/users/{user}', [UserController::class, 'show'])->name('users.show');
+Route::get('/admin/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::put('/admin/users/{user}', [UserController::class, 'update'])->name('users.update');
+Route::delete('/admin/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
