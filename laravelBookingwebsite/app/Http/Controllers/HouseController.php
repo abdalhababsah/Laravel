@@ -16,9 +16,17 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $houses = House::with('User')->get();
+        // Retrieve user ID from the session
+        $userId = session('iduser');
+
+        // Fetch houses associated with the specific user using the user ID
+        $houses = House::whereHas('user', function ($query) use ($userId) {
+            $query->where('id', $userId);
+        })->get();
+
         return view('leaser.house.index', ['houses' => $houses]);
     }
+
 
     /**
      * Show the form for creating a new resource.
