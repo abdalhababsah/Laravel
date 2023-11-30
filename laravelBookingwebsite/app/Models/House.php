@@ -25,6 +25,7 @@ class House extends Model
     ];
 
 
+
     public function user()
     {
         return $this->belongsTo(User::class, 'id');
@@ -33,5 +34,4 @@ class House extends Model
     {
         return $this->hasMany(Booking::class, 'BookingID', 'HouseID');
     }
-
 }
