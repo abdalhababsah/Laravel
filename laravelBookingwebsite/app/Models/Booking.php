@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     use HasFactory;
-
+    protected $primaryKey = 'BookingID';
     protected $fillable = [
-        'BookingID',
+
         'BookingStatus',
         'ArravingTime',
         'LeavingTime',

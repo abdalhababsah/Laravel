@@ -7,6 +7,7 @@ class CreateHousesTable extends Migration
 {
     public function up()
     {
+
         Schema::create('houses', function (Blueprint $table) {
             $table->id('HouseID');
             $table->string('Address');

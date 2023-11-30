@@ -33,19 +33,19 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-
         $data = $request->validate([
             'Address' => 'required',
             'Type' => 'required',
-            'NumberOfRoom' => 'required',
-            'NumberOfToilet' => 'required',
-            'NumberOfBelcony' => 'required',
-            'Rent' => 'required',
-            'Image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'Status' => 'required',
+            'NumberOfRoom' => 'required|integer',
+            'NumberOfToilet' => 'required|integer',
+            'NumberOfBelcony' => 'required|integer',
+            'Rent' => 'required|integer',
+            'Status' => 'required|in:available,booked',
             'Location' => 'required',
-            'UserID' => 'required',
+            'UserID' => 'required|exists:users,id',
+            // 'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Add image validation rules
         ]);
+
 
         if ($request->hasFile('Image')) {
             $image = $request->file('Image');
@@ -72,6 +72,8 @@ class HouseController extends Controller
      */
     public function edit(House $house)
     {
+
+
         return view('leaser.house.edit', ['house' => $house]);
     }
 
@@ -84,31 +86,36 @@ class HouseController extends Controller
         $data = $request->validate([
             'Address' => 'required',
             'Type' => 'required',
-            'NumberOfRoom' => 'required',
-            'NumberOfToilet' => 'required',
-            'NumberOfBelcony' => 'required',
-            'Rent' => 'required',
-            'Image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'Status' => 'required',
+            'NumberOfRoom' => 'required|integer',
+            'NumberOfToilet' => 'required|integer',
+            'NumberOfBelcony' => 'required|integer',
+            'Rent' => 'required|integer',
+            'Status' => 'required|in:available,booked',
             'Location' => 'required',
-            'UserID' => 'required',
+            'UserID' => 'required|exists:users,id',
+            'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Add image validation rules
         ]);
 
+        // Handle image upload if a new image is provided
         if ($request->hasFile('Image')) {
-            // Delete the existing image file
-            $destination_path = 'public/images/rooms' . $house->Image;
-            if (File::exists($destination_path)) {
-                File::delete($destination_path);
-            }
-            // Upload the new image file
             $image = $request->file('Image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->storeAs('public/images/rooms', $imageName);
+
+            // Delete the existing image file
+            $destinationPath = 'public/images/rooms' . $house->Image;
+            if (File::exists($destinationPath)) {
+                File::delete($destinationPath);
+            }
+
             // Update the data array with the new image name
             $data['Image'] = $imageName;
         }
+
+        // Update house data with the new values
         $house->update($data);
-        return redirect(route('house.index'))->with('success', 'house update succesffully');
+
+        return redirect(route('house.index'))->with('success', 'House updated successfully');
     }
 
     /**

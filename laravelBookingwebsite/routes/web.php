@@ -29,7 +29,7 @@ Route::get('/leaser/house', [HouseController::class, 'index'])->name('house.inde
 Route::get('/leaser/house/show', [HouseController::class, 'show'])->name('house.show');
 Route::get('/leaser/house/create', [HouseController::class, 'create'])->name('house.create');
 Route::post('/leaser/house', [HouseController::class, 'store'])->name('house.store');
-Route::get('/leaser/house/{HouseID}/edit', [HouseController::class, 'edit'])->name('house.edit');
+Route::get('/leaser/house/{house}/edit', [HouseController::class, 'edit'])->name('house.edit');
 Route::put('/leaser/house/{house}/update', [HouseController::class, 'update'])->name('house.update');
 Route::delete('/leaser/house/{house}', [HouseController::class, 'destroy'])->name('house.destroy');
 // Route::resource('/leaser/house', HouseController::class);

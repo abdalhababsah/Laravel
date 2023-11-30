@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class House extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'HouseID';
+
     protected $fillable = [
-        'HouseID',
+
         'Address',
         'Type',
         'NumberOfRoom',

@@ -108,9 +108,9 @@
                                 <td class="py-2 px-4">{{ $house->Location }}</td>
                                 <td class="py-2 px-4">{{ optional($house->user)->Name }}</td>
                                 <td class="py-2 px-4">
-                                    {{ dd($house) }}
+
                                     <a href="{{ route('house.edit', $house->HouseID) }}" class="text-blue-600"><i
-                                            class="fas fa-pen"></i></a>
+                                             class="fas fa-pen"></i></a>
                                 </td>
                                 <td class="py-2 px-4">
                                     <!-- Form for delete action -->
