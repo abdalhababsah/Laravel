@@ -42,8 +42,8 @@
         <!-- Admin Content -->
         <div class="flex-1 p-10">
             <div class="flex justify-between mb-6">
-                <a href="{{ route('house.create') }}" class="btn btn-blue">Add house</a>
-                <a href="{{ route('house.index') }}" class="btn btn-blue">Manage house</a>
+                <a href="{{ route('adminhouse.create') }}" class="btn btn-blue">Add house</a>
+                <a href="{{ route('adminhouse.index') }}" class="btn btn-blue">Manage house</a>
             </div>
 
             <div class="bg-white rounded-lg shadow-md p-8">
@@ -83,12 +83,12 @@
                                 <td class="py-2 px-4">{{ optional($house->user)->Name }}</td>
                                 <td class="py-2 px-4">
 
-                                    <a href="{{ route('house.edit', $house->HouseID) }}" class="text-blue-600"><i
+                                    <a href="{{ route('adminhouse.edit', $house->HouseID) }}" class="text-blue-600"><i
                                              class="fas fa-pen"></i></a>
                                 </td>
                                 <td class="py-2 px-4">
                                     <!-- Form for delete action -->
-                                    <form method="POST" action="{{ route('house.destroy', $house->HouseID) }}">
+                                    <form method="POST" action="{{ route('adminhouse.destroy', $house->HouseID) }}">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="text-red-600"><i

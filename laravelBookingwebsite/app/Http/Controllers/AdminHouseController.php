@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\House;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -9,43 +8,20 @@ use Faker\Core\File as FakerFile;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
-class HouseController extends Controller
+class AdminHouseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    // public function index()
-    // {
-    //     $houses = House::with('User')->get();
-    //     return view('leaser.house.index', ['houses' => $houses]);
-    // }
-
-
 
     public function index()
     {
-        // Retrieve user ID from the session
-        $userId = session('iduser');
+        $houses = House::with('User')->get();
+        return view('admin.house.index', ['houses' => $houses]);    }
 
-        // Fetch houses associated with the specific user using the user ID
-        $houses = House::whereHas('user', function ($query) use ($userId) {
-            $query->where('id', $userId);
-        })->get();
 
-        return view('leaser.house.index', ['houses' => $houses]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('leaser.house.create');
+        return view('admin.house.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -70,7 +46,7 @@ class HouseController extends Controller
             $data['Image'] = $imageName;
         }
         $newHouse = House::create($data);
-        return redirect(route('house.index'));
+        return redirect()->route('adminhouse.index');
     }
 
     /**
@@ -79,7 +55,7 @@ class HouseController extends Controller
     public function show(House $house)
     {
         $house = House::all();
-        return view('house.index', ['house' => $house]);
+        return view('admin.house.index', ['houses' => $houses]);
     }
 
     /**
@@ -89,7 +65,7 @@ class HouseController extends Controller
     {
 
 
-        return view('leaser.house.edit', ['house' => $house]);
+        return view('admin.house.edit', ['house' => $house]);
     }
 
 
@@ -130,7 +106,7 @@ class HouseController extends Controller
         // Update house data with the new values
         $house->update($data);
 
-        return redirect(route('house.index'))->with('success', 'House updated successfully');
+        return redirect()->route('adminhouse.index')->with('success', 'House updated successfully');
     }
 
     /**
@@ -145,6 +121,6 @@ class HouseController extends Controller
         }
 
         $house->delete();
-        return redirect(route('house.index'))->with('success', 'House deleted successfully');
+        return redirect()->route('adminhouse.index')->with('success', 'House deleted successfully');
     }
 }

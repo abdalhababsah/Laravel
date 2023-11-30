@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 
+use App\Http\Controllers\AdminHouseController;
+
+// use Illuminate\Http\Request;
+
+// class AdminHousesController extends Controller
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,3 +68,11 @@ Route::get('/admin/users/{user}/edit', [UserController::class, 'edit'])->name('u
 Route::put('/admin/users/{user}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/admin/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 //////////////////////////////////////////////////////////////////////////
+Route::get('/admin/house', [AdminHouseController::class, 'index'])->name('adminhouse.index');
+Route::get('/admin/house/show', [AdminHouseController::class, 'show'])->name('adminhouse.show');
+Route::get('/admin/house/create', [AdminHouseController::class, 'create'])->name('adminhouse.create');
+Route::post('/admin/house', [AdminHouseController::class, 'store'])->name('adminhouse.store');
+Route::get('/admin/house/{house}/edit', [AdminHouseController::class, 'edit'])->name('adminhouse.edit');
+Route::put('/admin/house/{house}/update', [AdminHouseController::class, 'update'])->name('adminhouse.update');
+Route::delete('/admin/house/{house}', [AdminHouseController::class, 'destroy'])->name('adminhouse.destroy');
+// Route::resource('/leaser/house', HouseController::class);

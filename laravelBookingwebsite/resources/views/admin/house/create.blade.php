@@ -18,16 +18,16 @@
         <!-- Admin Content -->
         <div class="w-full p-8">
             <div class="flex justify-between mb-8">
-                <a href="{{ route('house.create') }}"
+                <a href="{{ route('adminhouse.create') }}"
                     class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md mr-4">Add house</a>
-                <a href="{{ route('house.index') }}"
+                <a href="{{ route('adminhouse.index') }}"
                     class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Manage house</a>
             </div>
 
             <div class="bg-white rounded-md shadow-md p-8">
                 <h2 class="text-2xl font-bold mb-4">Add house</h2>
 
-                <form action="{{ route('house.store') }}" method="post" class="space-y-4">
+                <form action="{{ route('adminhouse.store') }}" method="post" class="space-y-4">
                     @csrf
                     @method('post')
                     <div>
