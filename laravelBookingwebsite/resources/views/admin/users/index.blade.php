@@ -1,15 +1,8 @@
+@extends('layout.master')
+
+@section('content')
 
 
-
-
-
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <!-- Font Awesome -->
         <link rel="stylesheet"
@@ -38,24 +31,7 @@
 </head>
 <body class="bg-gray-100">
 
-    <header class="bg-white py-4 px-6 flex justify-between items-center">
-        <div class="logo">
-            <h1 class="logo-text text-2xl font-bold text-purple-700">Velvet Strides</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle text-2xl"></i>
-        <ul class="nav flex items-center">
-            <li class="relative">
-                <a href="#" class="flex items-center">
-                    <i class="fa fa-user text-purple-700"></i>
-                    <span class="ml-2">Awa Melvine</span>
-                    <i class="fa fa-chevron-down ml-1 text-xs text-gray-600"></i>
-                </a>
-                <ul class="absolute top-full left-0 bg-white border border-gray-200 mt-1 hidden">
-                    <li><a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
+  
 
     <div class="flex h-screen bg-gray-100">
         <!-- Left Sidebar -->
@@ -125,5 +101,5 @@
     <!-- Custom Script -->
     <script src="../../js/scripts.js"></script>
 
-</body>
-</html>
+    @endsection
+

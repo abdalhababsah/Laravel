@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@section('content')
+
+
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Your other styles and scripts -->
 
-    <title>Edit User - Admin Section</title>
 
-    <style>
-        /* Additional styles or overrides can be added here */
-    </style>
-</head>
+
 
 <body class="bg-gray-100">
 
@@ -86,6 +80,5 @@
     <!-- Your scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../../js/scripts.js"></script>
-</body>
+    @endsection
 
-</html>

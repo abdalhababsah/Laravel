@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Head content remains the same -->
-</head>
-<body>
-    <header>
-        <!-- Header content remains the same -->
-    </header>
+@extends('layout.master')
+
+@section('content')
+
+
 
     <div class="admin-wrapper">
         <!-- Left Sidebar -->
@@ -73,7 +69,4 @@
             src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
         <!-- Custom Script -->
         <script src="../../js/scripts.js"></script>
-
-    </body>
-
-</html>
+        @endsection
