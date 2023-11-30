@@ -32,6 +32,7 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->validate([
             'Address' => 'required',
             'Type' => 'required',
