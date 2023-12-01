@@ -12,15 +12,13 @@ class HomeHousesController extends Controller
     {
         // Fetch all houses
         $houses = House::all();
-        // Pass houses data to the view
-        // return view('houses.index', compact('houses'));
         return view('rooms', ['houses' => $houses]);
 
     }
 
 
     public function filter(Request $request)
-{
+    {
     $housesQuery = House::query();
     if ($request->filled('NumberOfRoom')) {
         $housesQuery->where('NumberOfRoom', $request->input('NumberOfRoom'));
