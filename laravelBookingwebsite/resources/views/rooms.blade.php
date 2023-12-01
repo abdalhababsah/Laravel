@@ -16,8 +16,7 @@
                             aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse flex-column align-items-stretch mt-2"
-                            id="filterDropdown">
+                        <div class="collapse navbar-collapse flex-column align-items-stretch mt-2" id="filterDropdown">
                             <div class="border bg-light p-3 rounded mb-3">
                                 <h5 class="mb-3" style="font-size: 18px;">CHECK AVAILABILITY</h5>
                                 <label class="form-label">Check-in</label>
@@ -71,13 +70,15 @@
             </div>
 
 
-            @foreach($houses as $house)
+            @foreach ($houses as $house)
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card mb-4 border-0 shadow">
                         <div class="row g-0 p-3 align-items-center">
                             <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                                <img src="{{ $house->Image }}" class="img-fluid rounded">
+                                <img class="img-fluid rounded" src="{{ asset('storage/images/rooms/' . $house->Image) }}"
+                                    alt="house Image">
                             </div>
+
                             <div class="col-md-5 px-lg-3 px-md-3 px-0">
                                 <h5 class="mb-3">{{ $house->Type }}</h5>
                                 <div class="features mb-4">
@@ -92,7 +93,8 @@
                             </div>
                             <div class="col-md-2 mt-lg-0 mt-md-0 mt-4 text-center">
                                 <h6 class="mb-4">Ꝛ{{ $house->Rent }} per night</h6>
-                                <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
+                                <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book
+                                    Now</a>
                                 <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More details</a>
                             </div>
                         </div>
@@ -114,10 +116,18 @@
                 el: ".swiper-pagination",
             },
             breakpoints: {
-                320: { slidesPerView: 1 },
-                640: { slidesPerView: 1 },
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 3 },
+                320: {
+                    slidesPerView: 1
+                },
+                640: {
+                    slidesPerView: 1
+                },
+                768: {
+                    slidesPerView: 3
+                },
+                1024: {
+                    slidesPerView: 3
+                },
             }
         });
     </script>

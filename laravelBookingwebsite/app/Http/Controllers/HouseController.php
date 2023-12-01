@@ -55,18 +55,16 @@ class HouseController extends Controller
             'NumberOfToilet' => 'required|integer',
             'NumberOfBelcony' => 'required|integer',
             'Rent' => 'required|integer',
+            'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'Status' => 'required|in:available,booked',
             'Location' => 'required',
             'UserID' => 'required|exists:users,id',
-            // 'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Add image validation rules
         ]);
-
-
         if ($request->hasFile('Image')) {
             $image = $request->file('Image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->storeAs('public/images/rooms', $imageName);
-            // Add the image name to the data array
+            // Update the data array with the new image name
             $data['Image'] = $imageName;
         }
         $newHouse = House::create($data);
@@ -108,7 +106,7 @@ class HouseController extends Controller
             'Status' => 'required|in:available,booked',
             'Location' => 'required',
             'UserID' => 'required|exists:users,id',
-            'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Add image validation rules
+            'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Handle image upload if a new image is provided
@@ -122,14 +120,11 @@ class HouseController extends Controller
             if (File::exists($destinationPath)) {
                 File::delete($destinationPath);
             }
-
             // Update the data array with the new image name
             $data['Image'] = $imageName;
         }
-
         // Update house data with the new values
         $house->update($data);
-
         return redirect(route('house.index'))->with('success', 'House updated successfully');
     }
 
