@@ -58,8 +58,7 @@ Route::get('/leaser/booking', [LeaserBookingController::class, 'index'])->name('
 Route::get('/leaser/booking/{booking}/edit', [LeaserBookingController::class, 'edit'])->name('leaserbooking.edit');
 Route::put('/leaser/booking/{booking}/update', [LeaserBookingController::class, 'update'])->name('leaserbooking.update');
 Route::delete('/leaser/booking/{booking}', [LeaserBookingController::class, 'destroy'])->name('leaserbooking.destroy');
-// Route::get('/leaser/booking/create', [LeaserBookingController::class, 'create'])->name('leaserbooking.create');
-// Route::post('/leaser/booking', [LeaserBookingController::class, 'store'])->name('leaserbooking.store');
+
 
 //////////////////////////////////login//////////////////////////////////////////
 
