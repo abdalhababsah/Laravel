@@ -21,10 +21,9 @@
         <!-- Left Sidebar -->
         <div class="w-1/4 bg-purple-700 py-8 px-4">
             <ul class="text-white">
-                <li><a href="../product/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Product</a></li>
-                <li><a href="../users/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Users</a></li>
-                <li><a href="../categorey/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Category</a></li>
-                <li><a href="../Salls/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Salls</a></li>
+                <li><a href="{{ route('leaserbooking.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage
+                        booking</a></li>
+                <li><a href="../users/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage reviews</a></li>
             </ul>
         </div>
         <!-- // Left Sidebar -->

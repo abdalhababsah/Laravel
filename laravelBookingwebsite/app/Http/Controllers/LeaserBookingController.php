@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
+
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\House;
 use App\Models\User;
@@ -71,27 +75,24 @@ class LeaserBookingController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
+
+
     public function update(Request $request, Booking $booking)
     {
-        // Validate the request data
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
             'BookingStatus' => 'required',
             'ArravingTime' => 'required|date',
             'LeavingTime' => 'required|date',
             'RenterID' => 'required',
-            // Add other validation rules as needed
+            'HouseID' => 'required',
         ]);
 
+        $updateResult = $booking->update($request->all());
 
-        // Update the booking properties
-        $booking->update($request->all());
-        // Optionally, you can redirect the user to a specific page after the update
         return redirect()->route('leaserbooking.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Booking $Booking)
     {
         $Booking->delete();
