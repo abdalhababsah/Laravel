@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeHousesController;
 use App\Http\Controllers\HouseController;
 
 use App\Http\Controllers\LeaserBookingController;
+use App\Http\Controllers\HomeHousesViewController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -49,7 +50,6 @@ Route::post('/leaser/house', [HouseController::class, 'store'])->name('house.sto
 Route::get('/leaser/house/{house}/edit', [HouseController::class, 'edit'])->name('house.edit');
 Route::put('/leaser/house/{house}/update', [HouseController::class, 'update'])->name('house.update');
 Route::delete('/leaser/house/{house}', [HouseController::class, 'destroy'])->name('house.destroy');
-Route::get('/room-detiels', [HouseController::class, 'roomsdetiels'])->name('room-detiels');
 
 // Route::resource('/leaser/house', HouseController::class);
 //////////////////////////////////////////////////////////////////////////
@@ -125,4 +125,7 @@ Route::get('/admin/bookings/search', [AdminBookingController::class, 'searchRent
 Route::get('/rooms', [HomeHousesController::class, 'index'])->name('rooms');
 Route::get('/filter-rooms', [HomeHousesController::class, 'filter'])->name('filter.houses');
 //////////////////////////////////////////////////////////////////////////
+
+Route::get('/house/{HouseID}', [HomeHousesViewController::class, 'index'])->name('room-detiels');
+Route::post('/book/{HouseID}', [HomeHousesViewController::class, 'book'])->name('book');
 

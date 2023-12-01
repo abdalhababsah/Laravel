@@ -36,7 +36,6 @@
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
-                                            <option value="5">5</option>
                                             <!-- Add other options as needed -->
                                         </select>
                                     </div>
@@ -48,7 +47,6 @@
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
-                                            <option value="5">5</option>
                                             <!-- Add other options as needed -->
                                         </select>
                                     </div>
@@ -60,7 +58,6 @@
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
-                                            <option value="5">5</option>
                                             <!-- Add other options as needed -->
                                         </select>
                                     </div>
@@ -95,7 +92,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2 mt-lg-0 mt-md-0 mt-4 text-center">
-                                <h6 class="mb-4">Ꝛ{{ $house->Rent }} per night</h6>
+                                <h6 class="mb-4">{{ $house->Rent }} per night</h6>
                                 <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
 
                                 <a href="{{ route('room-detiels', ['HouseID' => $house->HouseID]) }}" class="btn btn-sm w-100 btn-outline-dark shadow-none" role="button">
