@@ -31,6 +31,7 @@
                                     <div class="me-2">
                                         <label class="form-label">Number of Rooms</label>
                                         <select name="NumberOfRoom" class="form-select shadow-none">
+                                            <option value=""></option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -42,6 +43,7 @@
                                     <div class="me-2">
                                         <label class="form-label">Number of Toilets</label>
                                         <select name="NumberOfToilet" class="form-select shadow-none">
+                                            <option value=""></option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -53,6 +55,7 @@
                                     <div>
                                         <label class="form-label">Number of Balconies</label>
                                         <select name="NumberOfBelcony" class="form-select shadow-none">
+                                            <option value=""></option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
