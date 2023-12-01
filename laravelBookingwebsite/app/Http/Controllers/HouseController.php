@@ -74,10 +74,11 @@ class HouseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(House $house)
+    public function show()
     {
-        $house = House::all();
-        return view('house.index', ['house' => $house]);
+        $houses = House::all();
+         // Fetch all houses from the database
+        return view('house.index', ['houses' => $houses]);
     }
 
     /**
@@ -142,4 +143,10 @@ class HouseController extends Controller
         $house->delete();
         return redirect(route('house.index'))->with('success', 'House deleted successfully');
     }
+
+    public function roomsdetiels()
+    {
+        return view('room-detiels');
+    }
+
 }

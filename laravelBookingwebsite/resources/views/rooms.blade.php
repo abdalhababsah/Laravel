@@ -93,18 +93,25 @@
                             </div>
                             <div class="col-md-2 mt-lg-0 mt-md-0 mt-4 text-center">
                                 <h6 class="mb-4">Ꝛ{{ $house->Rent }} per night</h6>
-                                <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book
-                                    Now</a>
-                                <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More details</a>
-                            </div>
+                                <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
+
+                                <a href="{{ route('room-detiels', ['HouseID' => $house->HouseID]) }}" class="btn btn-sm w-100 btn-outline-dark shadow-none" role="button">
+                                    More information
+                                </a>
+
+
+                                </div>
                         </div>
                     </div>
                 </div>
-            @endforeach
-        </div>
-    </form>
-    </div>
 
+            @endforeach
+
+        </div>
+
+    </form>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

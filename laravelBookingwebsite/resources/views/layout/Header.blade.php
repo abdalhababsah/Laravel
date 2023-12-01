@@ -244,9 +244,9 @@
         </div>
       </div>
 
-      {{-- @php
-      $user = App\Models\User::find(session('iduser'));
-  @endphp --}}
+      @php
+      $users = App\Models\User::find(session('iduser'));
+  @endphp
  {{-- ////////////////////////////////////profile//////////////////////////////////// --}}
       <div class="modal fade" id="ProfileModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -267,15 +267,15 @@
                         <div class="row">
                             <div class="col-md-6 ps-0 mb-3">
                                 <label class="form-label">Name</label>
-                                <input type="text" name="name" class="form-control shadow-none" value="{{ session('Name') }}" required>
+                                <input type="text" name="name" class="form-control shadow-none" value="{{ $users ? $users->Name : '' }}" required>
                             </div>
                             <div class="col-md-6 p-0">
                                 <label class="form-label">Contact</label>
-                                <input type="number" name="contact" class="form-control shadow-none" value="{{ session('contact') }}" required>
+                                <input type="number" name="contact" class="form-control shadow-none" value="{{ $users ? $users->Contact : '' }}" required>
                             </div>
                             <div class="col-md-12 ps-0 mb-3">
                                 <label class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control shadow-none" value="{{ session('email') }}" required>
+                                <input type="email" name="email" class="form-control shadow-none" value="{{ $users ? $users->Email : '' }}" required>
                             </div>
                             <div class="col-md-6 ps-0 mb-3">
                                 <label class="form-label">New Password</label>
