@@ -33,6 +33,6 @@ class House extends Model
     }
     public function bookings()
     {
-        return $this->belongsTo(Booking::class, 'HouseID');
+        return $this->hasMany(Booking::class, 'HouseID');
     }
 }
