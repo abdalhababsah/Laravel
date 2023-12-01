@@ -88,6 +88,9 @@
     form {
         box-shadow: none !important;
     }
+    .button_profile{
+        margin-left: 20px;
+    }
     </style>
 </head>
 <body>
@@ -120,22 +123,28 @@
                           <a class="nav-link me-2" href="{{ route('about') }}">About</a>
                        </li>
                     </ul>
-                    @if (!session('iduser'))
-                    <div class="d-flex" role="search">
-                        <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModel">Login</button>
-                        <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#registerModel">Register</button>
-                    </div>
-                @else
-                    <div class="d-flex" role="search">
-                        <form action="{{ route('logout') }}" method="post">
-                            @csrf
-                            <button type="submit" class="btn btn-outline-dark shadow-none">Logout</button>
-                        </form>
-                    </div>
-                @endif
+           @if (!session('iduser'))
+    <div class="d-flex" role="search">
+        <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModel">Login</button>
+        <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#registerModel">Register</button>
+    </div>
+@else
+    <div class="d-flex" role="search">
+        <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <button type="submit" class="btn btn-outline-dark shadow-none">Logout</button>
+
+        </form>
+    </div>
+    <div class="button_profile">
+        <button type="submit" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#ProfileModel">Profile</button>
+
+    </div>
+@endif
           </div>
         </div>
 
+{{-- //////////////////////////////////////////login/////////////////////////////////////////////// --}}
       <div class="modal fade" id="loginModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -180,6 +189,10 @@
         </div>
       </div>
 
+
+
+
+{{-- ////////////////////////////////////signup////////////////////////////////////////// --}}
       <div class="modal fade" id="registerModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -231,7 +244,60 @@
         </div>
       </div>
 
-      </div>
+      {{-- @php
+      $user = App\Models\User::find(session('iduser'));
+  @endphp --}}
+ {{-- ////////////////////////////////////profile//////////////////////////////////// --}}
+      <div class="modal fade" id="ProfileModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <form action="{{ route('update_profile') }}" method="POST">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center">
+                        <i class="bi bi-person-lines-fill fs-3 me-2">Update Profile</i>
+                    </h5>
+                    <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span class="badge rounded-pill bg-light text-dark mb-3 text-wrap lh-base">
+                        Note: Your details must match with your ID (Aadhaar card, passport, driving license, etc.) that will be required during check-in.
+                    </span>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control shadow-none" value="{{ session('Name') }}" required>
+                            </div>
+                            <div class="col-md-6 p-0">
+                                <label class="form-label">Contact</label>
+                                <input type="number" name="contact" class="form-control shadow-none" value="{{ session('contact') }}" required>
+                            </div>
+                            <div class="col-md-12 ps-0 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control shadow-none" value="{{ session('email') }}" required>
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">New Password</label>
+                                <input type="password" name="password" class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 p-0">
+                                <label class="form-label">Confirm New Password</label>
+                                <input type="password" name="password_confirmation" class="form-control shadow-none">
+                            </div>
+                            <div class="text-center my-1">
+                                <button type="submit" class="btn btn-dark shadow-none">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+</div>
+</div>
+</div>
+
       </nav>
 
 
