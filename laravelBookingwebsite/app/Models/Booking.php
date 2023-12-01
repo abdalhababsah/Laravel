@@ -21,9 +21,9 @@ class Booking extends Model
     {
         return $this->belongsTo(User::class, 'RenterID');
     }
-    public function Houses()
+    public function house()
     {
-        return $this->hasMany(House::class, 'HouseID');
+        return $this->belongsTo(House::class, 'HouseID');
     }
 
 }

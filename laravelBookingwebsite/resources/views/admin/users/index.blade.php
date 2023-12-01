@@ -39,7 +39,7 @@
             <ul class="text-white">
                 <li><a href="{{ route('users.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Users</a></li>
                 <li><a href="{{ route('adminhouse.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Houses</a></li>
-                <li><a href="../categorey/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Category</a></li>
+                <li><a href="{{ route('admin.bookings.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Bookings</a></li>
                 <li><a href="../Salls/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Salls</a></li>
             </ul>
         </div>

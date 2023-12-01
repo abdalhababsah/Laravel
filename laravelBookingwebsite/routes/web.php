@@ -7,6 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\AdminHouseController;
+use App\Http\Controllers\AdminBookingController;
+
 
 // use Illuminate\Http\Request;
 
@@ -67,7 +69,7 @@ Route::get('/admin/users/{user}', [UserController::class, 'show'])->name('users.
 Route::get('/admin/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/admin/users/{user}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/admin/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-//////////////////////////////////////////////////////////////////////////
+////////////////////////////////admin house table ///////////////////////////////////////
 Route::get('/admin/house', [AdminHouseController::class, 'index'])->name('adminhouse.index');
 Route::get('/admin/house/show', [AdminHouseController::class, 'show'])->name('adminhouse.show');
 Route::get('/admin/house/create', [AdminHouseController::class, 'create'])->name('adminhouse.create');
@@ -75,4 +77,6 @@ Route::post('/admin/house', [AdminHouseController::class, 'store'])->name('admin
 Route::get('/admin/house/{house}/edit', [AdminHouseController::class, 'edit'])->name('adminhouse.edit');
 Route::put('/admin/house/{house}/update', [AdminHouseController::class, 'update'])->name('adminhouse.update');
 Route::delete('/admin/house/{house}', [AdminHouseController::class, 'destroy'])->name('adminhouse.destroy');
-// Route::resource('/leaser/house', HouseController::class);
+////////////////////////////////admin bookings view  ///////////////////////////////////////
+Route::get('/admin/bookings', [AdminBookingController::class, 'index'])->name('admin.bookings.index');
+Route::get('/admin/bookings/search', [AdminBookingController::class, 'searchRenter'])->name('admin.booking.search');
