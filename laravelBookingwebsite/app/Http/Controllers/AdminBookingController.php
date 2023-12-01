@@ -11,7 +11,7 @@ class AdminBookingController extends Controller
 {
     public function index()
     {
-        $bookings = Booking::with('renter', 'House')->paginate(5);;
+        $bookings = Booking::with('renter', 'House')->paginate(5);
 
         return view('admin.booking.index', ['bookings' => $bookings]);
     }
@@ -20,7 +20,7 @@ class AdminBookingController extends Controller
     $searchTerm = $request->input('search');
     $bookings = Booking::with('renter')->whereHas('renter', function ($query) use ($searchTerm) {
         $query->where('Name', 'like', '%' . $searchTerm . '%');
-    })->get();
+    })->paginate(5);
 
     return view('admin.booking.index', ['bookings' => $bookings]);
 }
