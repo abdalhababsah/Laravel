@@ -44,7 +44,7 @@ public function login(Request $request)
                 break;
 
             case 2: // Laser
-                return redirect()->route('home');
+                return redirect()->route('house.index');
                 break;
 
             case 3: // User
@@ -77,7 +77,7 @@ public function logout()
     Auth::logout();
     session()->flush(); // This will destroy the entire session
 
-    return redirect()->route('home'); 
+    return redirect()->route('home');
 }
 
 

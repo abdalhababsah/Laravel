@@ -84,4 +84,43 @@ class UserController extends Controller
         $user->delete();
         return redirect(route('users.index'));
     }
+
+
+
+
+
+ /////////////////////////////////////////////////////////////
+    public function updateProfile(Request $request)
+    {
+        // Get the user ID from the session
+        $userId = session('iduser');
+
+        // Validate the form data
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'contact' => 'required|numeric',
+            'email' => 'required|email|max:255',
+            'password' => 'nullable|string|min:8|confirmed',
+        ]);
+
+        // Find the user by ID
+        $user = User::find($userId);
+
+        // Update user data
+        $user->name = $request->input('name');
+        $user->contact = $request->input('contact');
+        $user->email = $request->input('email');
+
+        // Update password if provided
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->input('password'));
+        }
+
+        // Save changes
+        $user->save();
+
+        // Redirect back or to a specific route
+        return redirect()->back()->with('success', 'Profile updated successfully');
+    }
+
 }
