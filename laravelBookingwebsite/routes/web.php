@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\HouseController;
-use App\Http\Controllers\PageController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AuthController;
-
-use App\Http\Controllers\AdminHouseController;
 use App\Http\Controllers\AdminBookingController;
+use App\Http\Controllers\AdminHouseController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeHousesController;
+use App\Http\Controllers\HouseController;
+
+use App\Http\Controllers\LeaserBookingController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
 
 
 // use Illuminate\Http\Request;
@@ -28,6 +29,9 @@ use App\Http\Controllers\HomeHousesController;
 Route::get('/', function () {
     return view('Home');
 });
+Route::get('/roomsdetiels', function () {
+    return view('room-detiels');
+});
 ////////////////////////////////nav-bar/////////////////////////////////////
 Route::get('/home', [PageController::class, 'home'])->name('home');
 // Route::get('/rooms', [PageController::class, 'rooms'])->name('rooms');
@@ -35,6 +39,8 @@ Route::get('/facilities', [PageController::class, 'facilities'])->name('faciliti
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 //////////////////////////////////////////////////////////////////////////
+////leaser house /////
+
 Route::get('/leaser/house', [HouseController::class, 'index'])->name('house.index');
 Route::get('/leaser/house/show', [HouseController::class, 'show'])->name('house.show');
 Route::get('/leaser/house/create', [HouseController::class, 'create'])->name('house.create');
@@ -46,9 +52,12 @@ Route::delete('/leaser/house/{house}', [HouseController::class, 'destroy'])->nam
 // Route::resource('/leaser/house', HouseController::class);
 
 //////////////////////////////////////////////////////////////////////////
+////leaser booking /////
 
-
-
+Route::get('/leaser/booking', [LeaserBookingController::class, 'index'])->name('leaserbooking.index');
+Route::get('/leaser/booking/{booking}/edit', [LeaserBookingController::class, 'edit'])->name('leaserbooking.edit');
+Route::put('/leaser/booking/{booking}/update', [LeaserBookingController::class, 'update'])->name('leaserbooking.update');
+Route::delete('/leaser/booking/{booking}', [LeaserBookingController::class, 'destroy'])->name('leaserbooking.destroy');
 
 
 //////////////////////////////////login//////////////////////////////////////////
@@ -60,7 +69,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 /////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////profile////////////////////////////////////////////////////
-Route::post('/update-profile',[UserController::class,'updateProfile'])->name('update_profile');
+Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('update_profile');
 
 ///////////////////////////////////////////////////////////////////////////////////////
 

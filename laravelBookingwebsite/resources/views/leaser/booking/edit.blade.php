@@ -14,7 +14,8 @@
             <!-- Admin Content -->
             <div class="w-full p-8">
                 <div class="flex justify-between mb-8">
-
+                    {{-- <a href="{{ route('house.create') }}"
+                        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md mr-4">Add house</a> --}}
                     <a href="{{ route('leaserbooking.index') }}"
                         class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Manage booking</a>
                 </div>
@@ -22,7 +23,7 @@
                 <div class="bg-white rounded-md shadow-md p-8">
                     <h2 class="text-2xl font-bold mb-4">Add house</h2>
 
-                    <form action="{{ route('bookings.update', $booking->BookingID) }}" method="post" class="space-y-4"
+                    <form action="{{ route('leaserbooking.update', $booking->BookingID) }}" method="post" class="space-y-4"
                         enctype="multipart/form-data">
                         @csrf
                         @method('put')
@@ -60,7 +61,6 @@
                             </button>
                         </div>
                     </form>
-
 
                 </div>
             </div>
