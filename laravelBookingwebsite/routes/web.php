@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeHousesController;
 use App\Http\Controllers\HouseController;
 
 use App\Http\Controllers\LeaserBookingController;
+use App\Http\Controllers\LeaserReviewController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -64,6 +65,13 @@ Route::put('/leaser/booking/{booking}/update', [LeaserBookingController::class, 
 Route::delete('/leaser/booking/{booking}', [LeaserBookingController::class, 'destroy'])->name('leaserbooking.destroy');
 ///////////////////////////////////////////////////////////////////////////////
 
+
+
+///////////////////////////////leaser review//////////////////////////////////////
+// Route::get('/leaser/review', [LeaserReviewController::class, 'index'])->name('leaserReview.index');
+Route::get('/leaser-reviews', [LeaserReviewController::class, 'index'])->name('leaser.reviews');
+
+///////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -125,4 +133,3 @@ Route::get('/admin/bookings/search', [AdminBookingController::class, 'searchRent
 Route::get('/rooms', [HomeHousesController::class, 'index'])->name('rooms');
 Route::get('/filter-rooms', [HomeHousesController::class, 'filter'])->name('filter.houses');
 //////////////////////////////////////////////////////////////////////////
-
