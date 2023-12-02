@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\House;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,8 +14,10 @@ class AdminHouseController extends Controller
 
     public function index()
     {
-        $houses = House::with('User')->get();
-        return view('admin.house.index', ['houses' => $houses]);    }
+        $houses = House::with('user')->paginate(4); // Paginate the results with 5 items per page
+        return view('admin.house.index', ['houses' => $houses]);
+    }
+
 
 
     public function create()

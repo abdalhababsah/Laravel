@@ -1,7 +1,5 @@
 @extends('layout.master')
 @section('content')
-
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -30,8 +28,10 @@
         <div class="w-1/4 bg-purple-700 py-8 px-4">
             <ul class="text-white">
                 <li><a href="{{ route('users.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Users</a></li>
-                <li><a href="{{ route('adminhouse.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Houses</a></li>
-                <li><a href="{{ route('admin.bookings.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Bookings</a></li>
+                <li><a href="{{ route('adminhouse.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Houses</a>
+                </li>
+                <li><a href="{{ route('admin.bookings.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage
+                        Bookings</a></li>
                 <li><a href="../Salls/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Salls</a></li>
             </ul>
         </div>
@@ -83,21 +83,23 @@
                                 <td class="py-2 px-4">
 
                                     <a href="{{ route('adminhouse.edit', $house->HouseID) }}" class="text-blue-600"><i
-                                             class="fas fa-pen"></i></a>
+                                            class="fas fa-pen"></i></a>
                                 </td>
                                 <td class="py-2 px-4">
                                     <!-- Form for delete action -->
                                     <form method="POST" action="{{ route('adminhouse.destroy', $house->HouseID) }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="text-red-600"><i
-                                                class="fas fa-trash"></i></button>
+                                        <button type="submit" class="text-red-600"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                <div class="mt-4">
+                    {{ $houses->links() }}
+                </div>
             </div>
         </div>
         <!-- // Admin Content -->
@@ -108,6 +110,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Custom Script -->
     <script src="../../js/scripts.js"></script>
-
-
 @endsection

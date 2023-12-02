@@ -29,7 +29,7 @@ class LeaserBookingController extends Controller
             ->join('houses', 'houses.HouseID', '=', 'bookings.HouseID')
             ->join('users', 'users.id', '=', 'houses.UserID')
             ->where('users.id', $userId)
-            ->get();
+            ->paginate(4);;
         return view('leaser.booking.index', ['bookings' => $bookings]);
     }
 

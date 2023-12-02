@@ -10,7 +10,15 @@ class UserController extends Controller
     public function index()
     {
 
-        $users = User::all();
+        $usersQuery = User::query(); // Create a query builder instance
+
+        // Check if pagination is needed
+        if ($usersQuery) {
+            $users = $usersQuery->paginate(5); // Paginate the results with 5 items per page
+        } else {
+            $users = $usersQuery->get(); // Get all results without pagination
+        }
+
         return view('admin.users.index', ['users' => $users]);
     }
 
@@ -89,7 +97,7 @@ class UserController extends Controller
 
 
 
- /////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////
     public function updateProfile(Request $request)
     {
         // Get the user ID from the session
@@ -122,5 +130,4 @@ class UserController extends Controller
         // Redirect back or to a specific route
         return redirect()->back()->with('success', 'Profile updated successfully');
     }
-
 }
