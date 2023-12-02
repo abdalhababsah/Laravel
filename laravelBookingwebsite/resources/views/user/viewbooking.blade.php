@@ -13,7 +13,7 @@
     <!-- Admin Styling -->
     <link rel="stylesheet" href="../../css/admin.css">
 
-    <title>Admin Section - Manage Users</title>
+    <title>Admin Section - Manage booking</title>
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
@@ -21,9 +21,7 @@
         <!-- Left Sidebar -->
         <div class="w-1/4 bg-purple-700 py-8 px-4">
             <ul class="text-white">
-                <li><a href="{{ route('leaserbooking.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage
-                        booking</a></li>
-                <li><a href="{{ route('leaser.reviews') }}" class="block py-2 px-4 hover:bg-purple-600">Manage reviews</a>
+                <li><a href="{{ route('user.reviews') }}" class="block py-2 px-4 hover:bg-purple-600">Manage reviews</a>
                 </li>
             </ul>
         </div>
@@ -31,13 +29,13 @@
 
         <!-- Admin Content -->
         <div class="flex-1 p-10">
-            <div class="flex justify-between mb-6">
+            {{-- <div class="flex justify-between mb-6">
                 <a href="{{ route('house.create') }}" class="btn btn-blue">Add house</a>
                 <a href="{{ route('house.index') }}" class="btn btn-blue">Manage house</a>
-            </div>
+            </div> --}}
 
             <div class="bg-white rounded-lg shadow-md p-8">
-                <h2 class="text-2xl font-bold mb-6">Manage house</h2>
+                <h2 class="text-2xl font-bold mb-6">Manage booking</h2>
 
                 <div class="overflow-x-auto">
                     <table class="w-full table-auto">
@@ -45,42 +43,34 @@
                             <tr>
                                 <th class="py-2 px-4 bg-gray-200">#</th>
                                 <th class="py-2 px-4 bg-gray-200">Address</th>
-                                <th class="py-2 px-4 bg-gray-200">Type</th>
-                                <th class="py-2 px-4 bg-gray-200">Rooms</th>
-                                <th class="py-2 px-4 bg-gray-200">Toilets</th>
-                                <th class="py-2 px-4 bg-gray-200">Balconies</th>
-                                <th class="py-2 px-4 bg-gray-200">Rent</th>
-                                <th class="py-2 px-4 bg-gray-200">Image</th>
-                                <th class="py-2 px-4 bg-gray-200">Status</th>
-                                <th class="py-2 px-4 bg-gray-200">Location</th>
-                                <th class="py-2 px-4 bg-gray-200">UserID</th>
+                                <th class="py-2 px-4 bg-gray-200">Type </th>
+                                <th class="py-2 px-4 bg-gray-200">Booking_Status</th>
+                                <th class="py-2 px-4 bg-gray-200">Arraving-Time</th>
+                                <th class="py-2 px-4 bg-gray-200">Leaving-Time</th>
                                 <th class="py-2 px-4 bg-gray-200" colspan="2">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($houses as $house)
+                            @forelse ($bookings as $booking)
                                 <tr class="{{ $loop->even ? 'bg-gray-100' : '' }}">
                                     <td class="py-2 px-4">{{ $loop->iteration }}</td>
-                                    <td class="py-2 px-4">{{ $house->Address }}</td>
-                                    <td class="py-2 px-4">{{ $house->Type }}</td>
-                                    <td class="py-2 px-4">{{ $house->NumberOfRoom }}</td>
-                                    <td class="py-2 px-4">{{ $house->NumberOfToilet }}</td>
-                                    <td class="py-2 px-4">{{ $house->NumberOfBelcony }}</td>
-                                    <td class="py-2 px-4">{{ $house->Rent }}</td>
-                                    <td class="py-2 px-4"><img src="{{ asset('storage/images/rooms/' . $house->Image) }}"
-                                            width="80px" height="80px" alt="house Image">
+                                    <td class="py-2 px-4">{{ $booking->house->Address }}</td>
+                                    <td class="py-2 px-4">{{ $booking->house->Type }}</td>
+                                    <td class="py-2 px-4">
+                                        @if ($booking->BookingStatus === 1)
+                                            Booked
+                                        @elseif ($booking->BookingStatus === 2)
+                                            Pending
+                                        @else
+                                            <!-- Handle other cases -->
+                                        @endif
+                                    </td>
+                                    <td class="py-2 px-4">{{ $booking->ArravingTime }}</td>
+                                    <td class="py-2 px-4">{{ $booking->LeavingTime }}</td>
 
-                                    </td>
-                                    <td class="py-2 px-4">{{ $house->Status }}</td>
-                                    <td class="py-2 px-4">{{ $house->Location }}</td>
-                                    <td class="py-2 px-4">{{ optional($house->user)->Name }}</td>
                                     <td class="py-2 px-4">
-                                        <a href="{{ route('house.edit', $house->HouseID) }}" class="text-blue-600"><i
-                                                class="fas fa-pen"></i></a>
-                                    </td>
-                                    <td class="py-2 px-4">
-                                        <!-- Form for delete action -->
-                                        <form method="POST" action="{{ route('house.destroy', $house->HouseID) }}">
+                                        <form method="POST"
+                                            action="{{ route('userbooking.destroy', $booking->BookingID) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="text-red-600"><i
@@ -88,7 +78,11 @@
                                         </form>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="8" class="py-2 px-4 text-center">No bookings found</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

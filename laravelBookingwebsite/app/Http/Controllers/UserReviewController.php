@@ -2,29 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Review;
+
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class LeaserReviewController extends Controller
+class UserReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // Get the user ID from the session
         $userId = Session::get('iduser');
-           
-        // Fetch reviews based on the user ID
-        $reviews = Review::select('reviews.Opinion', 'reviews.Rate', 'houses.Address AS HouseAddress', 'houses.Type AS HouseType', 'users.Name AS UserName')
-            ->join('users', 'reviews.UserID', '=', 'users.id')
-            ->join('houses', 'reviews.HouseID', '=', 'houses.HouseID')
-            ->where('houses.UserID', $userId)
+
+        $reviews = Review::with(['user', 'house'])
+            ->where('UserID', $userId)
             ->get();
 
-        // Pass the reviews data to the view
-        return view('leaser.reviwes.view', ['reviews' => $reviews]);
+        // Pass the reviews to the view
+        return view('user.viewreviews', ['reviews' => $reviews]);
     }
 
     /**
@@ -70,8 +68,9 @@ class LeaserReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Review $review)
     {
-        //
+        $review->delete();
+        return redirect()->back()->with('success', 'review deleted successfully');
     }
 }

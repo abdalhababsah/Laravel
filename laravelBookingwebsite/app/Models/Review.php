@@ -23,7 +23,6 @@ class Review extends Model
     {
         return $this->belongsTo(User::class, 'UserID');
     }
-
     public function house()
     {
         return $this->belongsTo(House::class, 'HouseID');

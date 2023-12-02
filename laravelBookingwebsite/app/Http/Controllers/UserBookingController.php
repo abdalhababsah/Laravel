@@ -2,29 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
+
 use Illuminate\Http\Request;
-use App\Models\Review;
 use Illuminate\Support\Facades\Session;
 
-class LeaserReviewController extends Controller
+class UserBookingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // Get the user ID from the session
         $userId = Session::get('iduser');
-           
-        // Fetch reviews based on the user ID
-        $reviews = Review::select('reviews.Opinion', 'reviews.Rate', 'houses.Address AS HouseAddress', 'houses.Type AS HouseType', 'users.Name AS UserName')
-            ->join('users', 'reviews.UserID', '=', 'users.id')
-            ->join('houses', 'reviews.HouseID', '=', 'houses.HouseID')
-            ->where('houses.UserID', $userId)
-            ->get();
 
-        // Pass the reviews data to the view
-        return view('leaser.reviwes.view', ['reviews' => $reviews]);
+        $bookings = Booking::where('RenterID', $userId)
+            ->with('house') // Load the related house data
+            ->get();
+        return view('user.viewbooking', ['bookings' => $bookings]);
     }
 
     /**
@@ -70,8 +65,9 @@ class LeaserReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Booking $booking)
     {
-        //
+        $booking->delete();
+        return redirect()->back()->with('success', 'Booking deleted successfully');
     }
 }
