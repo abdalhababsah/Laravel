@@ -39,8 +39,8 @@
     <div class="col-lg-4 col-md-6 mb-5 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
         <div class="d-flex align-items-center mb-2">
-          <img src="images/facilities/Wifi.svg" width="40px">
-          <h5 class="m-0 ms-3">Wifi</h5>
+          <img src="images/door-hanger.png" width="40px">
+          <h5 class="m-0 ms-3">Door hanger</h5>
         </div>
           <p>
            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -51,8 +51,8 @@
     <div class="col-lg-4 col-md-6 mb-5 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
         <div class="d-flex align-items-center mb-2">
-          <img src="images/facilities/Wifi.svg" width="40px">
-          <h5 class="m-0 ms-3">Wifi</h5>
+          <img src="images/reception-bell.png" width="40px">
+          <h5 class="m-0 ms-3">Reception</h5>
         </div>
           <p>
            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -63,8 +63,8 @@
     <div class="col-lg-4 col-md-6 mb-5 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
         <div class="d-flex align-items-center mb-2">
-          <img src="Wifi.svg" width="40px">
-          <h5 class="m-0 ms-3">Wifi</h5>
+          <img src="images/key-room.png" width="40px">
+          <h5 class="m-0 ms-3">Key Room</h5>
         </div>
           <p>
            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -75,8 +75,8 @@
     <div class="col-lg-4 col-md-6 mb-5 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
         <div class="d-flex align-items-center mb-2">
-          <img src="images/facilities/Wifi.svg" width="40px">
-          <h5 class="m-0 ms-3">Wifi</h5>
+          <img src="images/room-service.png" width="40px">
+          <h5 class="m-0 ms-3">Room Service</h5>
         </div>
           <p>
            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -87,8 +87,8 @@
     <div class="col-lg-4 col-md-6 mb-5 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
         <div class="d-flex align-items-center mb-2">
-          <img src="images/facilities/Wifi.svg" width="40px">
-          <h5 class="m-0 ms-3">Wifi</h5>
+          <img src="images/place.png" width="40px">
+          <h5 class="m-0 ms-3">Hotel</h5>
         </div>
           <p>
            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -99,8 +99,8 @@
     <div class="col-lg-4 col-md-6 mb-5 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
         <div class="d-flex align-items-center mb-2">
-          <img src="images/facilities/Wifi.svg" width="40px">
-          <h5 class="m-0 ms-3">Wifi</h5>
+          <img src="images/food-service.png" width="40px">
+          <h5 class="m-0 ms-3">food Service</h5>
         </div>
           <p>
            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

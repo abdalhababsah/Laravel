@@ -43,47 +43,7 @@
 </div>
 
 <!-- check avilability form-->
-<div class="container availability-form">
-   <div class="row">
-       <div class="col-lg-12 bg-white shadow p-4 rounded">
-           <h5 class="col-lg-3">Check Booking Availability</h5>
-           <form>
-               <div class="row align-items-end">
-                   <div class="col-lg-3 mb-3">
-                       <label class="form-label" style="font-weight: 500;">Check-in</label>
-                       <input type="date" class="form-control shadow-none">
-                   </div>
-                   <div class="col-lg-3 mb-3">
-                       <label class="form-label" style="font-weight: 500;">Check-in</label>
-                       <input type="date" class="form-control shadow-none">
-                   </div>
-                   <div class="col-lg-3 mb-3">
-                       <label class="form-label" style="font-weight: 500;">Adult</label>
-                       <select class="form-select shadow-none">
 
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                   </div>
-                   <div class="col-lg-2 mb-3">
-                       <label class="form-label" style="font-weight: 500;">Children</label>
-                       <select class="form-select shadow-none">
-
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                   </div>
-                   <div class="col-lg-1 mb-lg-3 mt-2">
-                       <button type="submit" class="btn text-white shadow-none custom-bg">Submit</button>
-                   </div>
-
-               </div>
-           </form>
-       </div>
-   </div>
-</div>
 
 <!-- Our Rooms -->
 <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR ROOMS</h2>
@@ -92,9 +52,9 @@
 
        <div class="col-lg-4 col-md-6 my-3">
            <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
-            <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+            <img src="images/The Lush and Luxurious Sanya EDITION on Hainan Island.jpg" class="card-img-top" height="250px" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Simple Room Name</h5>
+              <h5 class="card-title">Tranquil Garden Hideaway</h5>
               <h6 class="mb-4">Ꝛ2000 per night </h6>
               <div class="features mb-4">
                   <h6 class="mb-1">Features</h6>
@@ -147,8 +107,8 @@
                       </span>
                   </div>
                   <div class="d-flex justify-content-evenly mb-2">
-                      <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
-                      <a href="#" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+                    <a href="{{ route('rooms') }}" class="btn btn-sm btn-outline-dark shadow-none">check Now</a>
+
                   </div>
             </div>
           </div>
@@ -156,20 +116,20 @@
 
        <div class="col-lg-4 col-md-6 my-3">
            <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
-            <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+            <img src="images/pre2.jpg" class="card-img-top" alt="..." height="250px">
             <div class="card-body">
-              <h5 class="card-title">Simple Room Name</h5>
-              <h6 class="mb-4">Ꝛ2000 per night </h6>
+              <h5 class="card-title">Elegant Oasis Suite</h5>
+              <h6 class="mb-4">Ꝛ2500 per night </h6>
               <div class="features mb-4">
                   <h6 class="mb-1">Features</h6>
                   <span class="badge rounded-pill bg-light text-dark text-wrap">
                       2 Rooms
                   </span>
                   <span class="badge rounded-pill bg-light text-dark text-wrap">
-                      1 Bathroom
+                      3 Bathroom
                   </span>
                   <span class="badge rounded-pill bg-light text-dark text-wrap">
-                      1 Balcony
+                      5 Balcony
                   </span>
                   <span class="badge rounded-pill bg-light text-dark text-wrap">
                       3 Sofa
@@ -210,8 +170,8 @@
                       </span>
                   </div>
                   <div class="d-flex justify-content-evenly mb-2">
-                      <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
-                      <a href="#" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+                    <a href="{{ route('rooms') }}" class="btn btn-sm btn-outline-dark shadow-none">check Now</a>
+
                   </div>
               </div>
             </div>
@@ -220,9 +180,9 @@
 
        <div class="col-lg-4 col-md-6 my-3">
            <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
-            <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+            <img src="images/Hotel Bodrog Wellness & Elix Spa ____ Sárospatak.jpg" class="card-img-top" height="250px" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Simple Room Name</h5>
+              <h5 class="card-title">Deluxe Seaview Retreat</h5>
               <h6 class="mb-4">Ꝛ2000 per night </h6>
               <div class="features mb-4">
                   <h6 class="mb-1">Features</h6>
@@ -296,24 +256,24 @@
 <div class="container">
    <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
        <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-           <img src="images/Facilities/wifi.svg" width="80px">
-           <h5 class="mt-3">Wifi</h5>
+           <img src="images/reception.gif" width="80px">
+           <h5 class="mt-3">reception</h5>
        </div>
        <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-           <img src="images/Facilities/wifi.svg" width="80px">
-           <h5 class="mt-3">Wifi</h5>
+           <img src="images/free-wifi.gif" width="80px">
+           <h5 class="mt-3">free wifi</h5>
        </div>
        <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-           <img src="images/Facilities/wifi.svg" width="80px">
-           <h5 class="mt-3">Wifi</h5>
+           <img src="images/booking.gif" width="80px">
+           <h5 class="mt-3">Booking</h5>
        </div>
        <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-           <img src="images/Facilities/wifi.svg" width="80px">
-           <h5 class="mt-3">Wifi</h5>
+           <img src="images/bellboy.gif" width="80px">
+           <h5 class="mt-3">Bellboy</h5>
        </div>
        <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-           <img src="images/Facilities/wifi.svg" width="80px">
-           <h5 class="mt-3">Wifi</h5>
+           <img src="images/keys.gif" width="80px">
+           <h5 class="mt-3">keys</h5>
        </div>
        <div class="col-lg-12 text-center mt-5">
            <a href="#" class="btn btn-sm btn-outline-dark rounded rounded-0 fw-bold shadow-none">More Facilities >>></a>

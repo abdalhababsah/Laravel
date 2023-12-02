@@ -91,9 +91,10 @@
     .button_profile{
         margin-left: 20px;
     }
-    .ahmad{
-        margin-left: 50px !important;
-    }
+    .shadow-none {
+    box-shadow: none!important;
+    margin-left: 20px !important;
+}
     </style>
 </head>
 <body>
