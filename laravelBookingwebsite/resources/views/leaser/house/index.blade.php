@@ -6,11 +6,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
-
-    <!-- Custom Styling -->
     <link rel="stylesheet" href="../../css/style.css">
-
-    <!-- Admin Styling -->
     <link rel="stylesheet" href="../../css/admin.css">
 
     <title>Admin Section - Manage Users</title>
@@ -79,7 +75,7 @@
                                                 class="fas fa-pen"></i></a>
                                     </td>
                                     <td class="py-2 px-4">
-                                        <!-- Form for delete action -->
+
                                         <form method="POST" action="{{ route('house.destroy', $house->HouseID) }}">
                                             @csrf
                                             @method('DELETE')
@@ -94,11 +90,9 @@
                 </div>
             </div>
         </div>
-        <!-- // Admin Content -->
-    </div>
-    <!-- // Page Wrapper -->
 
-    <!-- JQuery -->
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Custom Script -->
     <script src="../../js/scripts.js"></script>

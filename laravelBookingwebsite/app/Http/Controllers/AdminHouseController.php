@@ -57,7 +57,7 @@ class AdminHouseController extends Controller
      */
     public function show(House $house)
     {
-        $house = House::all();
+        $house = House::paginate(4);
         return view('admin.house.index', ['houses' => $house]);
     }
 
