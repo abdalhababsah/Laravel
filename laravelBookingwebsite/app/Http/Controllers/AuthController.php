@@ -36,7 +36,7 @@ public function login(Request $request)
     if ($user && $this->checkPassword($request->password, $user->password)) {
 
         session(['iduser' => $user->id]);
-
+         session(['role' => $user->RoleID]);
         // Check the user's role and redirect accordingly
         switch ($user->RoleID) {
             case 1: // Admin
