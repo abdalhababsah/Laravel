@@ -52,7 +52,11 @@
                                 <tr class="{{ $loop->even ? 'bg-gray-100' : '' }}">
                                     <td class="py-2 px-4">{{ $loop->iteration }}</td>
                                     <td class="py-2 px-4">{{ $review->Opinion }}</td>
-                                    <td class="py-2 px-4">{{ $review->Rate }}</td>
+                                    <td class="py-2 px-4">
+                                        @for ($i = 0; $i < $review->Rate; $i++)
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                        @endfor
+                                    </td>
                                     <td class="py-2 px-4">{{ $review->house->Address }}</td>
                                     <td class="py-2 px-4">{{ $review->house->Type }}</td>
                                     <td class="py-2 px-4">

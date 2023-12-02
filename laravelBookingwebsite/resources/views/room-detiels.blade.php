@@ -1,12 +1,12 @@
 @extends('layout.master')
 
 @section('content')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
@@ -391,65 +391,65 @@
         }
 
         /* #mobile{
-    display: none;
-    align-items:center ;
+                        display: none;
+                        align-items:center ;
 
- }
- #navbar.active{
-    right: -300px;
+                     }
+                     #navbar.active{
+                        right: -300px;
 
- }
- .show{
-    display: block;
- }
-@media (max-width:799px) {
-    #navbar{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        align-items: center;
-        justify-content:flex-start;
-        position: fixed;
-        right: -300px;
-        height: 100vh;
-        width: 300px;
-        background-color: #E3E6F3;
-        padding: 80px 0 0 10px;
-
-
-    }
-    #navbar.active{
-        margin-top: 35px;
-        right: 0px;
+                     }
+                     .show{
+                        display: block;
+                     }
+                    @media (max-width:799px) {
+                        #navbar{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            align-items: center;
+                            justify-content:flex-start;
+                            position: fixed;
+                            right: -300px;
+                            height: 100vh;
+                            width: 300px;
+                            background-color: #E3E6F3;
+                            padding: 80px 0 0 10px;
 
 
-     }
-    #navbar li{
-        margin-bottom: 25px;
-    }
-    #mobile{
-        display: flex;
-        align-items:center ;
-        margin-right: 20px;
-
-     }
-     #mobile i{
-        color: #1a1a1a;
-        font-size: 24px;
-        padding-left: 20px;
+                        }
+                        #navbar.active{
+                            margin-top: 35px;
+                            right: 0px;
 
 
+                         }
+                        #navbar li{
+                            margin-bottom: 25px;
+                        }
+                        #mobile{
+                            display: flex;
+                            align-items:center ;
+                            margin-right: 20px;
 
-     }
-     .show{
-        display: block;
-     }
+                         }
+                         #mobile i{
+                            color: #1a1a1a;
+                            font-size: 24px;
+                            padding-left: 20px;
 
-} */
+
+
+                         }
+                         .show{
+                            display: block;
+                         }
+
+                    } */
 
         /* .skills{
-    background-color:lightgrey;
-} */
+                        background-color:lightgrey;
+                    } */
         .skills .content {
             margin-top: 10px;
             display: flex;
@@ -817,14 +817,14 @@
         }
 
         /* #subtotal a{
-    text-decoration: none;
-    font-weight: bold;
-    background-color: rgb(34, 129, 34);
-    border-radius: 10px;
-    padding: 10px ;
-    color: black;
+                        text-decoration: none;
+                        font-weight: bold;
+                        background-color: rgb(34, 129, 34);
+                        border-radius: 10px;
+                        padding: 10px ;
+                        color: black;
 
-} */
+                    } */
         #user h2 {
             text-align: center;
         }
@@ -1193,105 +1193,106 @@
     </style>
 
 
-</head>
+    </head>
 
-<body>
-    <!-- Header Section  -->
-
-    </div>
-
-    </section>
-    <section id="prodetails" class="section-p1">
-        <div class="single-pro-image">
-            <img class="img-fluid rounded" src="{{ asset( $house->Image)  }}"
-            alt="house Image">
-                        <div class="header-box">
-                <h4>Product Details</h4>
-
-
-                <!-- Product Description -->
-                <span id="desc">Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam nostrum veritatis earum
-                    repudiandae laboriosam. Error, quisquam, non provident aut deleniti ex in cum repellendus asperiores
-                    nulla corporis doloremque velit repudiandae?</span>
-            </div>
-
-            <!-- Product Price -->
-            <div class="header-box">
-                <h2>{{$house->Rent}}JD</h2>
-            </div>
-            <!-- Status Information -->
-            <div class="header-box">
-                <h4>Status</h4>
-            </div>
+    <body>
+        <!-- Header Section  -->
 
         </div>
-        <div class="single-pro-details">
 
-            <!-- Room Information -->
-            <div class="header-box">
-
-                <h5>Our Room</h5>
-            </div>
-            <!-- User Information -->
-            <div class="header-box">
-                <h2>User</h2>
-            </div>
-            <!-- Address Information -->
-            <div class="header-box">
-                <h4>{{$house->Location}}</h4>
-            </div>
-            <div style="flex-direction: column">
-                <!-- Number of Rooms -->
+        </section>
+        <section id="prodetails" class="section-p1">
+            <div class="single-pro-image">
+                <img class="img-fluid rounded" src="{{ asset($house->Image) }}" alt="house Image">
                 <div class="header-box">
-                    <h5 style="color: #961d14">Number of rooms</h5>
-                    <h5 style="color: #961d14">{{$house->NumberOfRoom}}</h5>
+                    <h4>Product Details</h4>
+
+
+                    <!-- Product Description -->
+                    <span id="desc">Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam nostrum
+                        veritatis earum
+                        repudiandae laboriosam. Error, quisquam, non provident aut deleniti ex in cum repellendus asperiores
+                        nulla corporis doloremque velit repudiandae?</span>
                 </div>
 
-                <!-- Number of Toilet -->
+                <!-- Product Price -->
                 <div class="header-box">
-                    <h5>Number of toilet</h5>
-                    <h5>{{$house->NumberOfToilet}}</h5>
+                    <h2>{{ $house->Rent }}JD</h2>
+                </div>
+                <!-- Status Information -->
+                <div class="header-box">
+                    <h4>TJ HOTEL</h4>
                 </div>
 
-                <!-- Number of Balcony -->
+            </div>
+            <div class="single-pro-details">
+
+                <!-- Room Information -->
                 <div class="header-box">
-                    <h5>Number of balcony</h5>
-                    <h5>{{$house->NumberOfBelcony}}</h5>
+
+                    <h5>Our Room</h5>
+                </div>
+                <!-- User Information -->
+                <div class="header-box">
+                    <h2>{{ $house->Address }}</h2>
+                </div>
+                <!-- Address Information -->
+                <div class="header-box">
+                    <h4>{{ $house->Location }}</h4>
+                </div>
+                <div style="flex-direction: column">
+                    <!-- Number of Rooms -->
+                    <div class="header-box">
+                        <h5 style="color: #961d14">Number of rooms</h5>
+                        <h5 style="color: #961d14">{{ $house->NumberOfRoom }}</h5>
+                    </div>
+
+                    <!-- Number of Toilet -->
+                    <div class="header-box">
+                        <h5>Number of toilet</h5>
+                        <h5>{{ $house->NumberOfToilet }}</h5>
+                    </div>
+
+                    <!-- Number of Balcony -->
+                    <div class="header-box">
+                        <h5>Number of balcony</h5>
+                        <h5>{{ $house->NumberOfBelcony }}</h5>
+                    </div>
+                </div>
+
+                <div>
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
+                    <form action="{{ route('book', ['HouseID' => $house->HouseID]) }}" method="POST">
+                        @csrf
+                        <!-- Check-in Input -->
+                        <div class="col-lg-7 mb-3">
+                            <label class="form-label" style="font-weight: 700;">Check-in</label>
+                            <input type="date" name="arriving_time" class="form-control shadow-none"
+                                style="width: 100%;">
+                        </div>
+
+                        <!-- Check-out Input -->
+                        <div class="col-lg-3 mb-3">
+                            <label class="form-label" style="font-weight: 700;">Check-out</label>
+                            <input type="date" name="leaving_time" class="form-control shadow-none" style="width: 100%;">
+                        </div>
+
+                        <!-- Booking Button -->
+                        <div class="quantity-container1">
+                            <button type="submit" class="normal" style="width: 100%;">Book Now</button>
+                        </div>
+                    </form>
+
                 </div>
             </div>
-
-            <div>
-                @if(session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-@endif
-
-                <form action="{{ route('book', ['HouseID' => $house->HouseID]) }}" method="POST">
-                    @csrf
-                    <!-- Check-in Input -->
-                    <div class="col-lg-7 mb-3">
-                        <label class="form-label" style="font-weight: 700;">Check-in</label>
-                        <input type="date" name="arriving_time" class="form-control shadow-none" style="width: 100%;">
-                    </div>
-
-                    <!-- Check-out Input -->
-                    <div class="col-lg-3 mb-3">
-                        <label class="form-label" style="font-weight: 700;">Check-out</label>
-                        <input type="date" name="leaving_time" class="form-control shadow-none" style="width: 100%;">
-                    </div>
-
-                    <!-- Booking Button -->
-                    <div class="quantity-container1">
-                        <button type="submit" class="normal" style="width: 100%;">Book Now</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </section>
-    <script src="sproduct.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </section>
+        <script src="sproduct.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
     @endsection
-
-
