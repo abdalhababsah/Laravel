@@ -4,13 +4,15 @@ use App\Http\Controllers\AdminBookingController;
 use App\Http\Controllers\AdminHouseController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeHousesController;
+use App\Http\Controllers\HomeHousesViewController;
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\LeaserBookingController;
 use App\Http\Controllers\LeaserReviewController;
-use App\Http\Controllers\HomeHousesViewController;
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserBookingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserReviewController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -135,3 +137,14 @@ Route::get('/filter-rooms', [HomeHousesController::class, 'filter'])->name('filt
 
 Route::get('/house/{HouseID}', [HomeHousesViewController::class, 'index'])->name('room-detiels');
 Route::post('/book/{HouseID}', [HomeHousesViewController::class, 'book'])->name('book');
+
+
+
+///////////////////////////////user dachbord//////////////////////////////////////
+Route::get('/user/user-reviews', [UserReviewController::class, 'index'])->name('user.reviews');
+Route::delete('/user/user-reviews/{review}', [UserReviewController::class, 'destroy'])->name('userreview.destroy');
+
+Route::get('/user/useruser-booking', [UserBookingController::class, 'index'])->name('user.booking');
+Route::delete('/user/user-booking/{booking}', [UserBookingController::class, 'destroy'])->name('userbooking.destroy');
+
+///////////////////////////////////////////////////////////////////////////////
