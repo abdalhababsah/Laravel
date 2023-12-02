@@ -14,10 +14,7 @@
     </header>
 
     <div class="flex">
-        <!-- Left Sidebar -->
-        <!-- Left sidebar content remains the same -->
 
-        <!-- Admin Content -->
         <div class="w-full p-8">
             <div class="flex justify-between mb-8">
                 <a href="{{ route('adminhouse.create') }}"

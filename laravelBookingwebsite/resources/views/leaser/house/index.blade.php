@@ -67,7 +67,7 @@
                                     <td class="py-2 px-4">{{ $house->NumberOfToilet }}</td>
                                     <td class="py-2 px-4">{{ $house->NumberOfBelcony }}</td>
                                     <td class="py-2 px-4">{{ $house->Rent }}</td>
-                                    <td class="py-2 px-4"><img src="{{ asset('storage/images/rooms/' . $house->Image) }}"
+                                    <td class="py-2 px-4"><img src="{{ asset( $house->Image) }}"
                                             width="80px" height="80px" alt="house Image">
 
                                     </td>

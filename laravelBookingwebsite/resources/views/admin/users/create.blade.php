@@ -5,10 +5,7 @@
 
 
     <div class="flex">
-        <!-- Left Sidebar -->
-        <!-- Left sidebar content remains the same -->
 
-        <!-- Admin Content -->
         <div class="w-full p-8">
             <div class="flex justify-between mb-8">
                 <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md mr-4">Add User</a>

@@ -32,13 +32,11 @@
             <!-- Left Sidebar -->
             <div class="w-1/4 bg-purple-700 py-8 px-4">
                 <ul class="text-white">
-                    <li><a href="{{ route('users.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Users</a>
-                    </li>
-                    <li><a href="{{ route('adminhouse.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage
-                            Houses</a></li>
-                    <li><a href="{{ route('admin.bookings.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage
-                            Bookings</a></li>
-                    <li><a href="../Salls/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Salls</a></li>
+
+                    <li><a href="{{ route('users.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Users</a></li>
+                    <li><a href="{{ route('adminhouse.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Houses</a></li>
+                    <li><a href="{{ route('admin.bookings.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Bookings</a></li>
+                    <li><a href="{{ route('admin.reviews.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Reviews</a></li>
                 </ul>
             </div>
             <!-- // Left Sidebar -->

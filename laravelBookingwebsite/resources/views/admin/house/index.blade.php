@@ -27,12 +27,11 @@
         <!-- Left Sidebar -->
         <div class="w-1/4 bg-purple-700 py-8 px-4">
             <ul class="text-white">
+
                 <li><a href="{{ route('users.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Users</a></li>
-                <li><a href="{{ route('adminhouse.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Houses</a>
-                </li>
-                <li><a href="{{ route('admin.bookings.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage
-                        Bookings</a></li>
-                <li><a href="../Salls/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Salls</a></li>
+                <li><a href="{{ route('adminhouse.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Houses</a></li>
+                <li><a href="{{ route('admin.bookings.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Bookings</a></li>
+                <li><a href="{{ route('admin.reviews.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage Reviews</a></li>
             </ul>
         </div>
         <!-- // Left Sidebar -->
@@ -75,7 +74,7 @@
                                 <td class="py-2 px-4">{{ $house->NumberOfToilet }}</td>
                                 <td class="py-2 px-4">{{ $house->NumberOfBelcony }}</td>
                                 <td class="py-2 px-4">{{ $house->Rent }}</td>
-                                <td class="py-2 px-4"><img src="{{ asset('storage/images/rooms/' . $house->Image) }}"
+                                <td class="py-2 px-4"><img src="{{ asset( $house->Image) }}"
                                         width="80px" height="80px" alt="house Image"></td>
                                 <td class="py-2 px-4">{{ $house->Status }}</td>
                                 <td class="py-2 px-4">{{ $house->Location }}</td>
