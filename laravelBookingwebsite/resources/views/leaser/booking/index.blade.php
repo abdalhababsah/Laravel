@@ -22,7 +22,8 @@
         <div class="w-1/4 bg-purple-700 py-8 px-4">
             <ul class="text-white">
                 <li><a href="{{ route('house.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage huose</a></li>
-                <li><a href="../users/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage reviews</a></li>
+                <li><a href="{{ route('leaser.reviews') }}" class="block py-2 px-4 hover:bg-purple-600">Manage reviews</a>
+                </li>
             </ul>
         </div>
         <!-- // Left Sidebar -->

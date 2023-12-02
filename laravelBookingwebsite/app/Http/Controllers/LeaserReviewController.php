@@ -24,7 +24,7 @@ class LeaserReviewController extends Controller
             ->get();
 
         // Pass the reviews data to the view
-        return view('leaser.booking.view', ['reviews' => $reviews]);
+        return view('leaser.reviwes.view', ['reviews' => $reviews]);
     }
 
     /**

@@ -23,7 +23,8 @@
             <ul class="text-white">
                 <li><a href="{{ route('leaserbooking.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage
                         booking</a></li>
-                <li><a href="../users/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage reviews</a></li>
+                <li><a href="{{ route('leaser.reviews') }}" class="block py-2 px-4 hover:bg-purple-600">Manage reviews</a>
+                </li>
             </ul>
         </div>
         <!-- // Left Sidebar -->
