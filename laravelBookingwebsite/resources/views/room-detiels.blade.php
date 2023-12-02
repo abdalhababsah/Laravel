@@ -1203,7 +1203,7 @@
     </section>
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
-            <img class="img-fluid rounded" src="{{ asset('storage/images/rooms/' . $house->Image) }}"
+            <img class="img-fluid rounded" src="{{ asset( $house->Image)  }}"
             alt="house Image">
                         <div class="header-box">
                 <h4>Product Details</h4>
