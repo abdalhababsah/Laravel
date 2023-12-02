@@ -37,6 +37,8 @@ Route::get('/home', [PageController::class, 'home'])->name('home');
 Route::get('/facilities', [PageController::class, 'facilities'])->name('facilities');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/redirect-to-role', [PageController::class, 'redirectToRole'])->name('redirect.to.role');
+
 //////////////////////////////////////////////////////////////////////////
 
 

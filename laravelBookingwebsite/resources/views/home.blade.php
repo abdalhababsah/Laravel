@@ -275,8 +275,7 @@
                       </span>
                   </div>
                   <div class="d-flex justify-content-evenly mb-2">
-                      <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
-                      <a href="#" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+                      <a href="{{ route('rooms') }}" class="btn btn-sm btn-outline-dark shadow-none">check Now</a>
                   </div>
               </div>
             </div>

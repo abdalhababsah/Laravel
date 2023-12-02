@@ -91,6 +91,9 @@
     .button_profile{
         margin-left: 20px;
     }
+    .ahmad{
+        margin-left: 50px !important;
+    }
     </style>
 </head>
 <body>
@@ -136,13 +139,25 @@
 
         </form>
     </div>
+
     <div class="button_profile">
         <button type="submit" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#ProfileModel">Profile</button>
 
     </div>
+    <div>
+    <a href="{{ route('redirect.to.role') }}" class="btn btn-outline-dark shadow-none" class="ahmad"  >Dashboard</a>
+</div>
+
+</div>
+
+
 @endif
+
           </div>
         </div>
+        @php
+      $users = App\Models\User::find(session('iduser'));
+  @endphp
 
 {{-- //////////////////////////////////////////login/////////////////////////////////////////////// --}}
       <div class="modal fade" id="loginModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
