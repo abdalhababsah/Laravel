@@ -326,28 +326,40 @@
 
 <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">TESTIMONIALS</h2>
 
-<div class="swiper-wrapper mb-5">
-    @foreach ($reviews as $review)
-        <div class="swiper-slide bg-white p-4">
-            <div class="profile d-flex align-items-center mb-3">
-                <!-- Check if the user relationship exists before accessing 'name' -->
-                @if ($review->user)
-                    <img src="images/facilities/stars.png" width="30px">
-                    <h6 class="m-0 ms-2">{{ $review->user->name }}</h6>
-                @else
-                    <p>Anonymous User</p>
-                @endif
-            </div>
-            <p>{{ $review->Opinion }}</p>
-            <p>House: {{ $review->house ? $review->house->name : 'Unknown House' }}</p>
-            <div class="rating">
-                @for ($i = 0; $i < $review->Rate; $i++)
-                    <i class="bi bi-star-fill text-warning"></i>
-                @endfor
-            </div>
+<div class="container mt-5">
+    <!-- Swiper -->
+    <div class="swiper swiper-testimonials">
+        <div class="swiper-wrapper mb-5">
+
+            @foreach ($reviews as $review)
+                <div class="swiper-slide bg-white p-4">
+                    <div class="profile d-flex align-items-center mb-3">
+                        @if ($review->user)
+                            <img src="images/facilities/stars.png" width="30px">
+                            <h6 class="m-0 ms-2">{{ $review->user->name }}</h6>
+                        @else
+                            <p>Anonymous User</p>
+                        @endif
+                    </div>
+                    <p>{{ $review->Opinion }}</p>
+                    @if ($review->house)
+                        <p>House: {{ $review->house->Location ?? 'Unknown Location' }}</p>
+                    @else
+                        <p>House: Unknown House</p>
+                    @endif
+                    <div class="rating">
+                        @for ($i = 0; $i < $review->Rate; $i++)
+                            <i class="bi bi-star-fill text-warning"></i>
+                        @endfor
+                    </div>
+                </div>
+            @endforeach
+
         </div>
-    @endforeach
+        <div class="swiper-pagination"></div>
+    </div>
 </div>
+
 
 <!-- REach us-->
 

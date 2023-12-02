@@ -7,6 +7,8 @@ use App\Http\Controllers\HomeHousesController;
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\LeaserBookingController;
 use App\Http\Controllers\LeaserReviewController;
+use App\Http\Controllers\HomeHousesViewController;
+
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;

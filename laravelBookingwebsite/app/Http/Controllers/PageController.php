@@ -10,8 +10,8 @@ class PageController extends Controller
     //
     public function home()
     {
-        $reviews = Review::with(['user', 'house'])->get();
-
+        $reviews = Review::with(['user:id,name', 'house:HouseID,Location'])->get();
+        // dd($reviews);
         return view('home', compact('reviews'));
     }
 

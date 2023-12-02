@@ -15,7 +15,7 @@ class LeaserReviewController extends Controller
     {
         // Get the user ID from the session
         $userId = Session::get('iduser');
-
+           
         // Fetch reviews based on the user ID
         $reviews = Review::select('reviews.Opinion', 'reviews.Rate', 'houses.Address AS HouseAddress', 'houses.Type AS HouseType', 'users.Name AS UserName')
             ->join('users', 'reviews.UserID', '=', 'users.id')
