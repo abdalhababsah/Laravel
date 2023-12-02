@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeHousesController;
 use App\Http\Controllers\HomeHousesViewController;
 use App\Http\Controllers\HouseController;
+use App\Http\Controllers\AdminReviewController;
 use App\Http\Controllers\LeaserBookingController;
 
 use App\Http\Controllers\LeaserReviewController;
@@ -129,7 +130,9 @@ Route::get('/admin/house/{house}/edit', [AdminHouseController::class, 'edit'])->
 Route::delete('/admin/house/{house}', [AdminHouseController::class, 'destroy'])->name('adminhouse.destroy');
 Route::get('/admin/bookings', [AdminBookingController::class, 'index'])->name('admin.bookings.index');
 Route::get('/admin/bookings/search', [AdminBookingController::class, 'searchRenter'])->name('admin.booking.search');
-///////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////admin Review  view & delete//////////////////////////////////////////////////
+Route::get('/admin/reviews', [AdminReviewController::class, 'index'])->name('admin.reviews.index');
+Route::delete('/admin/reviews/{Review}', [AdminReviewController::class, 'destroy'])->name('admin.reviews.destroy');
 
 
 
