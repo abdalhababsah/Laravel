@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminBookingController;
 use App\Http\Controllers\AdminHouseController;
 use App\Http\Controllers\AuthController;
@@ -7,8 +8,8 @@ use App\Http\Controllers\HomeHousesController;
 use App\Http\Controllers\HomeHousesViewController;
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\LeaserBookingController;
-use App\Http\Controllers\LeaserReviewController;
 
+use App\Http\Controllers\LeaserReviewController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserBookingController;
 use App\Http\Controllers\UserController;
@@ -33,12 +34,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Home');
 });
+Route::get('/about', [AboutController::class, 'aboutUs'])->name('about');
+
 
 ////////////////////////////////nav-bar/////////////////////////////////////
 Route::get('/home', [PageController::class, 'home'])->name('home');
 Route::get('/facilities', [PageController::class, 'facilities'])->name('facilities');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::get('/about', [PageController::class, 'about'])->name('about');
+// Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/redirect-to-role', [PageController::class, 'redirectToRole'])->name('redirect.to.role');
 
 //////////////////////////////////////////////////////////////////////////
