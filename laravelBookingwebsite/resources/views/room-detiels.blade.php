@@ -1203,8 +1203,9 @@
     </section>
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
-            <img src="images/product1.webp" width="100%" height="450px" id="Mainimg" alt="product">
-            <div class="header-box">
+            <img class="img-fluid rounded" src="{{ asset('storage/images/rooms/' . $house->Image) }}"
+            alt="house Image">
+                        <div class="header-box">
                 <h4>Product Details</h4>
 
 
@@ -1216,7 +1217,7 @@
 
             <!-- Product Price -->
             <div class="header-box">
-                <h2>1500</h2>
+                <h2>{{$house->Rent}}JD</h2>
             </div>
             <!-- Status Information -->
             <div class="header-box">
@@ -1237,48 +1238,55 @@
             </div>
             <!-- Address Information -->
             <div class="header-box">
-                <h4>Address</h4>
+                <h4>{{$house->Location}}</h4>
             </div>
             <div style="flex-direction: column">
                 <!-- Number of Rooms -->
                 <div class="header-box">
                     <h5 style="color: #961d14">Number of rooms</h5>
+                    <h5 style="color: #961d14">{{$house->NumberOfRoom}}</h5>
                 </div>
 
                 <!-- Number of Toilet -->
                 <div class="header-box">
                     <h5>Number of toilet</h5>
+                    <h5>{{$house->NumberOfToilet}}</h5>
                 </div>
 
                 <!-- Number of Balcony -->
                 <div class="header-box">
                     <h5>Number of balcony</h5>
+                    <h5>{{$house->NumberOfBelcony}}</h5>
                 </div>
             </div>
-            <!-- Product Details -->
 
             <div>
-                <!-- Check-in Input -->
-                <div class="col-lg-7 mb-3">
-                    <label class="form-label" style="font-weight: 700;">Check-in</label>
-                    <input type="date" class="form-control shadow-none" style="width: 100%;">
-                </div>
+                @if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
 
-                <!-- Check-out Input -->
-                <div class="col-lg-3 mb-3">
-                    <label class="form-label" style="font-weight: 700;">Check-out</label>
-                    <input type="date" class="form-control shadow-none" style="width: 100%;">
-                </div>
+                <form action="{{ route('book', ['HouseID' => $house->HouseID]) }}" method="POST">
+                    @csrf
+                    <!-- Check-in Input -->
+                    <div class="col-lg-7 mb-3">
+                        <label class="form-label" style="font-weight: 700;">Check-in</label>
+                        <input type="date" name="arriving_time" class="form-control shadow-none" style="width: 100%;">
+                    </div>
 
-                <!-- Location Information -->
-                <div class="header-box">
-                    <h3>Location</h3>
-                </div>
+                    <!-- Check-out Input -->
+                    <div class="col-lg-3 mb-3">
+                        <label class="form-label" style="font-weight: 700;">Check-out</label>
+                        <input type="date" name="leaving_time" class="form-control shadow-none" style="width: 100%;">
+                    </div>
 
-                <!-- Booking Button -->
-                <div class="quantity-container1">
-                    <button class="normal" onclick="booknow()" style="width: 100%;">Book Now</button>
-                </div>
+                    <!-- Booking Button -->
+                    <div class="quantity-container1">
+                        <button type="submit" class="normal" style="width: 100%;">Book Now</button>
+                    </div>
+                </form>
+
             </div>
         </div>
     </section>

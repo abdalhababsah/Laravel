@@ -25,5 +25,4 @@ class Booking extends Model
     {
         return $this->belongsTo(House::class, 'HouseID');
     }
-
 }

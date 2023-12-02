@@ -21,10 +21,9 @@
         <!-- Left Sidebar -->
         <div class="w-1/4 bg-purple-700 py-8 px-4">
             <ul class="text-white">
-                <li><a href="../product/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Product</a></li>
-                <li><a href="../users/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Users</a></li>
-                <li><a href="../categorey/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Category</a></li>
-                <li><a href="../Salls/index.html" class="block py-2 px-4 hover:bg-purple-600">Manage Salls</a></li>
+                <li><a href="{{ route('house.index') }}" class="block py-2 px-4 hover:bg-purple-600">Manage huose</a></li>
+                <li><a href="{{ route('leaser.reviews') }}" class="block py-2 px-4 hover:bg-purple-600">Manage reviews</a>
+                </li>
             </ul>
         </div>
         <!-- // Left Sidebar -->
@@ -59,7 +58,15 @@
                                     <td class="py-2 px-4">{{ $loop->iteration }}</td>
                                     <td class="py-2 px-4">{{ $booking->HouseID }}</td>
                                     <td class="py-2 px-4">{{ $booking->Address }}</td>
-                                    <td class="py-2 px-4">{{ $booking->BookingStatus }}</td>
+                                    <td class="py-2 px-4">
+                                        @if ($booking->BookingStatus === 1)
+                                            Booked
+                                        @elseif ($booking->BookingStatus === 2)
+                                            Pending
+                                        @else
+                                            <!-- Handle other cases -->
+                                        @endif
+                                    </td>
                                     <td class="py-2 px-4">{{ $booking->ArravingTime }}</td>
                                     <td class="py-2 px-4">{{ $booking->LeavingTime }}</td>
                                     <td class="py-2 px-4">{{ $booking->RenterID }}</td>
