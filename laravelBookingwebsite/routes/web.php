@@ -5,7 +5,6 @@ use App\Http\Controllers\AdminHouseController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeHousesController;
 use App\Http\Controllers\HouseController;
-
 use App\Http\Controllers\LeaserBookingController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
@@ -32,7 +31,6 @@ Route::get('/', function () {
 
 ////////////////////////////////nav-bar/////////////////////////////////////
 Route::get('/home', [PageController::class, 'home'])->name('home');
-// Route::get('/rooms', [PageController::class, 'rooms'])->name('rooms');
 Route::get('/facilities', [PageController::class, 'facilities'])->name('facilities');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/about', [PageController::class, 'about'])->name('about');

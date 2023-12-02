@@ -326,71 +326,27 @@
 
 <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">TESTIMONIALS</h2>
 
-<div class="container mt-5">
-   <!-- Swiper -->
-  <div class="swiper swiper-testimonials">
-    <div class="swiper-wrapper mb-5">
-
-      <div class="swiper-slide bg-white p-4">
-        <div class="profile d-flex align-items-center mb-3">
-            <img src="images/facilities/stars.png" width="30px">
-            <h6 class="m-0 ms-2">Random user1</h6>
+<div class="swiper-wrapper mb-5">
+    @foreach ($reviews as $review)
+        <div class="swiper-slide bg-white p-4">
+            <div class="profile d-flex align-items-center mb-3">
+                <!-- Check if the user relationship exists before accessing 'name' -->
+                @if ($review->user)
+                    <img src="images/facilities/stars.png" width="30px">
+                    <h6 class="m-0 ms-2">{{ $review->user->name }}</h6>
+                @else
+                    <p>Anonymous User</p>
+                @endif
+            </div>
+            <p>{{ $review->Opinion }}</p>
+            <p>House: {{ $review->house ? $review->house->name : 'Unknown House' }}</p>
+            <div class="rating">
+                @for ($i = 0; $i < $review->Rate; $i++)
+                    <i class="bi bi-star-fill text-warning"></i>
+                @endfor
+            </div>
         </div>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-        </p>
-        <div class="rating">
-            <i class="bi bi-star-fill text-warning"></i>
-          <i class="bi bi-star-fill text-warning"></i>
-          <i class="bi bi-star-fill text-warning"></i>
-          <i class="bi bi-star-fill text-warning"></i>
-        </div>
-      </div>
-
-      <div class="swiper-slide bg-white p-4">
-        <div class="profile d-flex align-items-center mb-3">
-            <img src="images/facilities/stars.png" width="30px">
-            <h6 class="m-0 ms-2">Random user1</h6>
-        </div>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-        </p>
-        <div class="rating">
-            <i class="bi bi-star-fill text-warning"></i>
-          <i class="bi bi-star-fill text-warning"></i>
-          <i class="bi bi-star-fill text-warning"></i>
-          <i class="bi bi-star-fill text-warning"></i>
-        </div>
-      </div>
-
-      <div class="swiper-slide bg-white p-4">
-        <div class="profile d-flex align-items-center mb-3">
-            <img src="images/facilities/stars.png" width="30px">
-            <h6 class="m-0 ms-2">Random user1</h6>
-        </div>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-        </p>
-        <div class="rating">
-            <i class="bi bi-star-fill text-warning"></i>
-          <i class="bi bi-star-fill text-warning"></i>
-          <i class="bi bi-star-fill text-warning"></i>
-          <i class="bi bi-star-fill text-warning"></i>
-        </div>
-      </div>
-
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
+    @endforeach
 </div>
 
 <!-- REach us-->
